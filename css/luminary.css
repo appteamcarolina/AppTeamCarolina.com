@@ -177,12 +177,17 @@ scrollbar-width: none;  /* Firefox */
         }
 } 
 
-#home {
-    margin-top: -175px
-}
+
+@media only screen 
+    and (min-width: 1125px){
+        #home{
+            margin-top: -175px
+        }
+} 
 
 .logo {
     font-family: "TypoRoundBold";
+    letter-spacing: 0.1rem;
 }
 
 .download {
