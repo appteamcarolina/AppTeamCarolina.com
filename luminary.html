@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <script src="https://cdn.tailwindcss.com" rel="stylesheet"></script>
+        <link rel="stylesheet" href="css/luminary.css">
+        <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    </head>
+    <body>
+
+    <!-- NAVIGATION -->
+    <nav class = "header">
+        <a href = "#">
+            <div class = "flex flex-row gap-2">
+                <img width = "15px" src = "assets/luminary-assets/LuminaryIcon.svg"/>
+                <h4 class = "logo">Luminary</h4>
+            </div>
+        </a>
+    
+        <div class = "flex gap-20">
+            <a href = "#about">About</a>
+            <a href = "#features">Features</a>
+        </div>
+    </nav>
+
+    
+    
+    <div class = "content-body">
+        
+        <!--HOME -->
+        <div id = "home" class = "content-item flex flex-wrap justify-center">
+            <div class = "flex flex-col justify-center gap-5 max-w-[400px]">
+                <div class = "flex flex-col">
+                    <img src = "assets/luminary-assets/LuminaryTextv.png" width = "300px"/>
+                    <h2>The smarter way to navigate UNC Chapel Hill.</h2>
+                </div>
+                <div class = "flex gap-3">
+                    <a href = "#about">
+                        <button class = "about-button">About</button>
+                    </a>
+
+                    <a href = "#features">
+                        <button class = "about-button">Features</button>
+                    </a>
+
+                    <a href = "#demo">
+                        <button class = "about-button">Video Demo</button>
+                    </a>
+                </div>
+            </div>
+            <img src = "assets/luminary-assets/Luminary1.png" class = "home-image"/>
+        </div>
+    
+        <!-- ABOUT -->
+        <div id = "about" class = "content-item flex flex-col items-center px-20">
+            <div class = "accessible-text-bg">
+                <h1>Accessible</h1>
+                <h1 class = "apple-light-blue">Navigation</h1>
+                <h1 class = "apple-blue">Is Our Goal</h1>
+            </div>
+
+            <img width = "200px" class = "about-image" src = "assets/luminary-assets/Luminary2.png"/>
+            
+    
+            <div class = "text-left px-10 max-w-90" >
+                <h2 class = "font-bold">About <span class = "apple-blue">Luminary</span></h2>
+                <p> Built by UNC students for UNC students, Luminary is a startup dedicated to accessibility, providing tailored directions for students with disabilities. - Our mission is to make campus navigation easier and more inclusive, ensuring everyone can move freely and confidently.</p>
+            </div>
+        </div>
+
+
+        <!-- FEATURES -->
+        <div id = "features" class = "content-item relative w-full h-full flex justify-between items-center">
+            <button id = "prev-button" class = "selection-button"> < </button>
+            <!-- Carousel -->
+             <div id="item-list">
+                <div class="item relative" style="stroke: var(--apple-blue)">
+                    <div>
+                        <svg class="absolute inset-0 w-full h-full -z-10" viewBox="0 0 500 500">
+                            <circle cx="280" cy="110" r="15" stroke-width="2" />
+                            <line x1="295" y1="110" x2="320" y2="110" />
+                            <text font-size="medium" x="325" y="110" fill="white" stroke="none">
+                                Report obstacles
+                            </text>
+                            <text font-size="medium" x="325" y="125" fill="white" stroke="none">
+                                on campus
+                            </text>
+                        </svg>
+                    </div>
+    
+                    <svg class="absolute inset-0 w-full h-full -z-10" viewBox="0 0 500 500">
+                        <circle cx="215" cy="400" r="15" stroke-width="2"/>
+                        <line x1="175" y1="400" x2="200" y2="400" />
+    
+                        <text font-size="medium" x="0" y="400" fill="white" stroke="none">
+                            Get custom directions
+                        </text>
+                        <text font-size="medium" x="00" y="415" fill="white" stroke="none">
+                             based on your needs
+                        </text>
+                    </svg>
+    
+    
+                    <img width = "650px" class = "features-img mx-auto" src = "assets/luminary-assets/Luminary3.png">
+    
+                </div>
+
+                <div class = "item feature-container"> 
+                    <p>Customize obstacle preferences specific to user needs</p>
+                    <div class = "flex">
+                        <img src = "assets/luminary-assets/Obstacles-1.png" />
+                        <img src = "assets/luminary-assets/Obstacles-2.png" />
+                    </div>
+                </div>
+    
+                <div class = "item feature-container"> 
+                    <p>Save frequently visited locations</p>
+                    <div class = "flex justify-center">
+                        <img src = "assets/luminary-assets/Locations.png" />
+                    </div>
+                </div>
+    
+                <div class = "item feature-container"> 
+                    <p>Get real-time alerts from other users</p>
+                    <div class = "flex justify-center">
+                        <img src = "assets/luminary-assets/Alerts-1.png" />
+                        <img src = "assets/luminary-assets/Alerts-2.png" />
+                    </div>
+                </div>
+    
+                <div class = "item feature-container"> 
+                    <p>Quick Report feature for faster, easier reporting</p>
+                    <div class = "flex justify-center">
+                        <img src = "assets/luminary-assets/Report-1.png" />
+                        <img src = "assets/luminary-assets/Report-2.png" />
+                    </div>
+                </div>
+             </div>
+
+
+             <button id = "next-button" class = "selection-button" data-slide="next"> > </button>
+            
+
+            
+
+            
+           
+        </div>
+    
+        <div id = "appstore" class = "content-item">
+            <div class = "flex flex-col items-center gap-5">
+                <div class = "flex flex-row gap-2">
+                    <img width = "30px" src = "assets/luminary-assets/LuminaryIcon.svg"/>
+                    <h2 class = "logo download">Luminary</h2>
+                </div>
+                <img src = "assets/luminary-assets/AppStore.png" width = "300px" />
+            </div>
+        </div>
+    
+    
+        
+
+    </div>
+
+    <!--SOCIAL MEDIA LINKS -->
+    <div class="content-item p-10 flex justify-between w-full">
+        <p class="text-sm apple-blue">
+          <a href="https://www.instagram.com/luminary.appteam/">Instagram</a> | 
+          <a>LinkedIn</a>
+        </p>
+        <p class = "text-sm">
+          <a>Terms and Conditions</a> | <a>Privacy Policy</a>
+        </p>
+      </div>
+
+    
+    <script src="js/luminary.js"></script>
+    </body>
+</html>
