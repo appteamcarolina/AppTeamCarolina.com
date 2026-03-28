@@ -1,0 +1,125 @@
+.bubbly-root {
+  background-color: rgb(15, 15, 15);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+}
+
+/* ---- LANDING ---- */
+.bubbly-flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 92%;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+.bubbly-aligner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bubbly-left  { width: 45%; height: 100%; margin: 0 auto; }
+.bubbly-right { width: 45%; height: 100%; margin: 0 auto; }
+
+.bubbly-logo {
+  display: block;
+  width: 80%;
+}
+.bubbly-mockup {
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  width: 90%;
+}
+.bubbly-caption {
+  font-size: 28px;
+  letter-spacing: 5%;
+  line-height: 30px;
+}
+.bubbly-button-section { margin-right: 10%; }
+.bubbly-button-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 6%;
+  justify-content: center;
+  margin-left: auto;
+}
+.bubbly-button { width: 47%; }
+.bubbly-button img { width: 100%; }
+.bubbly-button:hover { transform: scale(1.05); }
+
+#download_button { aspect-ratio: 3; }
+#video_button    { aspect-ratio: 3.33; }
+
+/* ---- DEMO ---- */
+.bubbly-demo { height: 88vh; }
+.bubbly-title { margin-left: 20%; font-size: 2rem; font-weight: bold; }
+.bubbly-demo video { width: 60%; margin: 0 20%; }
+
+/* ---- FOOTER ---- */
+.bubbly-footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.bubbly-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.bubbly-footer-content p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+.bubbly-nav {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+.bubbly-nav a {
+  color: #a373ff;
+  text-decoration: none;
+}
+.bubbly-nav a:hover { text-decoration: underline; }
+
+/* ---- DOCS (privacy / terms) ---- */
+.docs-back { display: block; }
+.docs-back img { width: 175px; margin: 20px; }
+
+.docs-container {
+  width: 65vw;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+.docs-container h1 { font-size: 36pt; font-weight: bold; margin-top: 1.5rem; }
+.docs-container h2 { font-size: 1.25rem; font-weight: bold; margin-top: 1rem; }
+.docs-container h3 { font-size: 1rem; margin-top: 0.75rem; }
+.docs-container p, .docs-container li { color: rgb(203, 203, 203); line-height: 24px; }
+.docs-container ul { padding-left: 1.5rem; margin: 0.5rem 0; }
+.docs-container a { color: #a373ff; }
+.docs-container table, .docs-container th, .docs-container td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  padding: 10px 15px;
+}
+.docs-container table { width: 100%; margin: 1rem 0; }
+
+@media (max-width: 800px) {
+  .bubbly-flex-container { margin: 0; }
+  .bubbly-aligner { height: auto; }
+  .bubbly-left  { width: 80%; height: 100%; margin-top: 30%; margin-left: auto; margin-right: auto; }
+  .bubbly-right { padding-top: 60px; width: 100%; height: 100%; margin-bottom: 30%; }
+  .bubbly-logo  { margin-left: auto; margin-right: auto; }
+  .bubbly-mockup { width: 60%; margin-left: auto; margin-right: auto; }
+  .bubbly-caption { text-align: center; }
+  .bubbly-button-section { margin-right: 0; }
+  .bubbly-demo video { width: 90%; margin: 0 5%; }
+  .bubbly-title { margin-left: 5%; }
+  .bubbly-demo { height: 70vh; }
+  .docs-container { width: 90vw; }
+  .docs-container h1 { font-size: 32pt; }
+}
