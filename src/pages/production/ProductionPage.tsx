@@ -1,8 +1,9 @@
+import { motion } from 'framer-motion'
 import Layout from '../../components/Layout'
 import { productionTracks, apps } from '../../data/content'
 import PageCta from '@/components/site/PageCta'
-import PageIntro from '@/components/site/PageIntro'
 import SectionHeading from '@/components/site/SectionHeading'
+import { ProductionBackgroundPaths } from '@/components/ui/background-paths-variants'
 
 const roles = [
   { icon: '/assets/tools.svg',      title: 'iOS Developer',           desc: 'Build native iOS apps with Swift and SwiftUI.' },
@@ -15,11 +16,33 @@ const roles = [
 export default function ProductionPage() {
   return (
     <Layout>
-      <PageIntro title="Production Track.">
-        Production is where ideas become real products. Our production members work in
-        cross-functional teams — developers, designers, product managers, and marketers —
-        shipping apps used by real people in the real world.
-      </PageIntro>
+      <div className="about-page-hero relative overflow-hidden">
+        <div className="absolute inset-0">
+          <ProductionBackgroundPaths />
+        </div>
+        <div className="relative z-10" style={{ padding: 'calc(var(--section-v) + 64px) var(--gutter) var(--section-v)' }}>
+          <motion.p
+            className="landing-eyebrow"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            App Team Carolina · Track
+          </motion.p>
+          <motion.h1
+            className="display-4 about-hero-title"
+            initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.2 }}
+          >
+            Production Track.
+          </motion.h1>
+          <motion.p
+            className="about-hero-sub"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }}
+          >
+            Production is where ideas become real products. Our production members work in
+            cross-functional teams — developers, designers, product managers, and marketers —
+            shipping apps used by real people in the real world.
+          </motion.p>
+        </div>
+      </div>
 
       <div className="section">
         <SectionHeading title="Team Types." />

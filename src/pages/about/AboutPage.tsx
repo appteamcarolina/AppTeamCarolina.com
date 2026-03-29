@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import Layout from '../../components/Layout'
 import { pillars, galleryImages, orgChart } from '../../data/content'
-import { BackgroundPaths } from '@/components/ui/background-paths'
+import { AboutBackgroundPaths } from '@/components/ui/background-paths-variants'
 import SectionHeading from '@/components/site/SectionHeading'
 
 export default function AboutPage() {
@@ -9,7 +9,7 @@ export default function AboutPage() {
     <Layout>
       {/* ── Hero ── */}
       <div className="about-page-hero relative overflow-hidden">
-        <BackgroundPaths />
+        <AboutBackgroundPaths />
         <div className="relative z-10" style={{ padding: 'calc(var(--section-v) + 64px) var(--gutter) var(--section-v)' }}>
           <motion.p
             className="landing-eyebrow"

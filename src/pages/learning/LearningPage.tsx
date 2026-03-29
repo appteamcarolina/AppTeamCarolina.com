@@ -1,8 +1,9 @@
+import { motion } from 'framer-motion'
 import Layout from '../../components/Layout'
 import { learningTracks } from '../../data/content'
 import PageCta from '@/components/site/PageCta'
-import PageIntro from '@/components/site/PageIntro'
 import SectionHeading from '@/components/site/SectionHeading'
+import { LearningBackgroundPaths } from '@/components/ui/background-paths-variants'
 
 const steps = [
   { num: '01', title: 'Apply', desc: 'Submit a short application. No experience needed for bootcamps — just curiosity and commitment.' },
@@ -14,11 +15,33 @@ const steps = [
 export default function LearningPage() {
   return (
     <Layout>
-      <PageIntro title="Learning Track.">
-        Whether you've never written a line of Swift or never opened Figma, our learning programs
-        meet you where you are. We teach iOS development and UI/UX design from the ground up —
-        the same skills used on real production teams.
-      </PageIntro>
+      <div className="about-page-hero relative overflow-hidden">
+        <div className="absolute inset-0">
+          <LearningBackgroundPaths />
+        </div>
+        <div className="relative z-10" style={{ padding: 'calc(var(--section-v) + 64px) var(--gutter) var(--section-v)' }}>
+          <motion.p
+            className="landing-eyebrow"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            App Team Carolina · Track
+          </motion.p>
+          <motion.h1
+            className="display-4 about-hero-title"
+            initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.2 }}
+          >
+            Learning Track.
+          </motion.h1>
+          <motion.p
+            className="about-hero-sub"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }}
+          >
+            Whether you've never written a line of Swift or never opened Figma, our learning programs
+            meet you where you are. We teach iOS development and UI/UX design from the ground up —
+            the same skills used on real production teams.
+          </motion.p>
+        </div>
+      </div>
 
       <div className="section">
         <SectionHeading title="Our Programs." />

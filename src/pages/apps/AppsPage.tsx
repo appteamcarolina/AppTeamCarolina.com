@@ -1,39 +1,36 @@
 import Layout from '../../components/Layout'
 import { apps } from '../../data/content'
 import { motion } from 'framer-motion'
-import { BackgroundPaths } from '@/components/ui/background-paths'
+import { AppsBackgroundPaths } from '@/components/ui/background-paths-variants'
 import SectionHeading from '@/components/site/SectionHeading'
 
 export default function AppsPage() {
   return (
     <Layout>
-      <section className="apps-hero">
-        <div className="apps-hero-paths">
-          <BackgroundPaths />
-        </div>
-        <div className="apps-hero-glow" />
-
-        <div className="apps-hero-inner">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-            className="apps-hero-copy"
+      <div className="about-page-hero relative overflow-hidden">
+        <AppsBackgroundPaths />
+        <div className="relative z-10" style={{ padding: 'calc(var(--section-v) + 64px) var(--gutter) var(--section-v)' }}>
+          <motion.p
+            className="landing-eyebrow"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <p className="landing-eyebrow">Apps · Shipped by App Team Carolina</p>
-            <h1 className="apps-hero-title">Real products, built with care.</h1>
-            <p className="apps-hero-sub">
-              From accessibility tools to personal finance and educational experiences, our teams build software for real people with real needs.
-            </p>
-
-            <div className="apps-hero-tags">
-              <span>Accessibility</span>
-              <span>Finance</span>
-              <span>Education</span>
-            </div>
-          </motion.div>
+            App Team Carolina · Our Work
+          </motion.p>
+          <motion.h1
+            className="display-4 about-hero-title"
+            initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.2 }}
+          >
+            Real products,<br />built with care.
+          </motion.h1>
+          <motion.p
+            className="about-hero-sub"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }}
+          >
+            From accessibility tools to personal finance and educational experiences,
+            our teams build software for real people with real needs.
+          </motion.p>
         </div>
-      </section>
+      </div>
 
       <div className="section" style={{ paddingTop: 0 }}>
         <SectionHeading title="Our Products." />
