@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import Layout from '../../components/Layout'
 import { pillars, galleryImages, orgChart } from '../../data/content'
 import { BackgroundPaths } from '@/components/ui/background-paths'
+import SectionHeading from '@/components/site/SectionHeading'
 
 export default function AboutPage() {
   return (
@@ -51,11 +52,8 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* ── What we do ── */}
       <div className="section">
-        <div className="section-header">
-          <h2 className="display-6 section-title">What We Do.</h2>
-        </div>
+        <SectionHeading title="What We Do." />
         <div className="pillar-content">
           <div className="row">
             {pillars.map((pillar) => (
@@ -75,7 +73,6 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* ── Gallery ── */}
       <div className="background-graphic-wave">
         <div className="gallery">
           {galleryImages.map((img, i) => (
@@ -84,11 +81,8 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* ── Leadership ── */}
       <div className="section">
-        <div className="section-header">
-          <h2 className="display-6 section-title">Our Leadership.</h2>
-        </div>
+        <SectionHeading title="Our Leadership." />
         <div className="blurb">
           <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '13px', marginTop: 0 }}>
             Names are placeholders — update them in <code style={{ color: '#4b8cb8' }}>src/data/content.ts</code>.
@@ -130,11 +124,8 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* ── Contact ── */}
       <div className="section">
-        <div className="section-header">
-          <h2 className="display-6 section-title">Get In Touch.</h2>
-        </div>
+        <SectionHeading title="Get In Touch." />
         <div className="about-contact">
           {[
             { label: 'Email', value: 'appteamcarolina@unc.edu', href: 'mailto:appteamcarolina@unc.edu' },

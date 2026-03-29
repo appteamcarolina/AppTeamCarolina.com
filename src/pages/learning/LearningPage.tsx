@@ -1,6 +1,8 @@
-import { NavLink } from 'react-router-dom'
 import Layout from '../../components/Layout'
 import { learningTracks } from '../../data/content'
+import PageCta from '@/components/site/PageCta'
+import PageIntro from '@/components/site/PageIntro'
+import SectionHeading from '@/components/site/SectionHeading'
 
 const steps = [
   { num: '01', title: 'Apply', desc: 'Submit a short application. No experience needed for bootcamps — just curiosity and commitment.' },
@@ -12,24 +14,14 @@ const steps = [
 export default function LearningPage() {
   return (
     <Layout>
-      <div className="section" style={{ paddingTop: 'calc(var(--section-v) + 56px)' }}>
-        <div className="section-header">
-          <h1 className="display-4 section-title">Learning Track.</h1>
-        </div>
-        <div className="blurb">
-          <p className="about-lead">
-            Whether you've never written a line of Swift or never opened Figma, our learning programs
-            meet you where you are. We teach iOS development and UI/UX design from the ground up —
-            the same skills used on real production teams.
-          </p>
-        </div>
-      </div>
+      <PageIntro title="Learning Track.">
+        Whether you've never written a line of Swift or never opened Figma, our learning programs
+        meet you where you are. We teach iOS development and UI/UX design from the ground up —
+        the same skills used on real production teams.
+      </PageIntro>
 
-      {/* Programs */}
       <div className="section">
-        <div className="section-header">
-          <h2 className="display-6 section-title">Our Programs.</h2>
-        </div>
+        <SectionHeading title="Our Programs." />
         <div className="section-content">
           <div className="row">
             {learningTracks.map((track) => (
@@ -50,11 +42,8 @@ export default function LearningPage() {
         </div>
       </div>
 
-      {/* How it works */}
       <div className="section">
-        <div className="section-header">
-          <h2 className="display-6 section-title">How It Works.</h2>
-        </div>
+        <SectionHeading title="How It Works." />
         <div className="section-content">
           <div className="learning-steps">
             {steps.map((step) => (
@@ -70,18 +59,12 @@ export default function LearningPage() {
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="section" style={{ textAlign: 'center', paddingBottom: 'calc(var(--section-v) * 1.5)' }}>
-        <div className="section-content">
-          <h2 className="display-6" style={{ marginBottom: '16px' }}>Ready to start?</h2>
-          <p style={{ color: 'rgba(255,255,255,0.55)', marginBottom: '32px', fontSize: '15px' }}>
-            Applications open each semester. Check the apply page for current openings.
-          </p>
-          <NavLink to="/apply" className="button" style={{ fontFamily: '"Comfortaa", cursive' }}>
-            <h4>Apply Now</h4>
-          </NavLink>
-        </div>
-      </div>
+      <PageCta
+        title="Ready to start?"
+        description="Applications open each semester. Check the apply page for current openings."
+        to="/apply"
+        actionLabel="Apply Now"
+      />
     </Layout>
   )
 }

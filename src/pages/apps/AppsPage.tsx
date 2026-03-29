@@ -2,6 +2,7 @@ import Layout from '../../components/Layout'
 import { apps } from '../../data/content'
 import { motion } from 'framer-motion'
 import { BackgroundPaths } from '@/components/ui/background-paths'
+import SectionHeading from '@/components/site/SectionHeading'
 
 export default function AppsPage() {
   return (
@@ -35,6 +36,7 @@ export default function AppsPage() {
       </section>
 
       <div className="section" style={{ paddingTop: 0 }}>
+        <SectionHeading title="Our Products." />
         <div className="row section-content">
           {apps.map((app) => (
             <div key={app.name} className="col-md-4">

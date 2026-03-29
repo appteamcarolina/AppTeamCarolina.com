@@ -1,20 +1,14 @@
 import { roles } from '../../data/content'
 import Layout from '../../components/Layout'
+import PageIntro from '@/components/site/PageIntro'
 
 export default function ApplyPage() {
   return (
     <Layout>
-      <div className="section" style={{ paddingTop: 'calc(var(--section-v) + 56px)' }}>
-        <div className="section-header">
-          <h1 className="display-4 section-title">Apply.</h1>
-        </div>
-        <div className="blurb">
-          <p style={{ maxWidth: '680px', lineHeight: 1.8 }}>
-            We're looking for passionate students across iOS development, UI/UX design, product
-            management, marketing, and more. Find the role that fits you and apply below.
-          </p>
-        </div>
-      </div>
+      <PageIntro title="Apply." bodyClassName="about-lead">
+        We're looking for passionate students across iOS development, UI/UX design, product
+        management, marketing, and more. Find the role that fits you and apply below.
+      </PageIntro>
 
       <div className="section">
         <div className="section-content">

@@ -1,6 +1,8 @@
-import { NavLink } from 'react-router-dom'
 import Layout from '../../components/Layout'
 import { productionTracks, apps } from '../../data/content'
+import PageCta from '@/components/site/PageCta'
+import PageIntro from '@/components/site/PageIntro'
+import SectionHeading from '@/components/site/SectionHeading'
 
 const roles = [
   { icon: '/assets/tools.svg',      title: 'iOS Developer',           desc: 'Build native iOS apps with Swift and SwiftUI.' },
@@ -13,24 +15,14 @@ const roles = [
 export default function ProductionPage() {
   return (
     <Layout>
-      <div className="section" style={{ paddingTop: 'calc(var(--section-v) + 56px)' }}>
-        <div className="section-header">
-          <h1 className="display-4 section-title">Production Track.</h1>
-        </div>
-        <div className="blurb">
-          <p className="about-lead">
-            Production is where ideas become real products. Our production members work in
-            cross-functional teams — developers, designers, product managers, and marketers —
-            shipping apps used by real people in the real world.
-          </p>
-        </div>
-      </div>
+      <PageIntro title="Production Track.">
+        Production is where ideas become real products. Our production members work in
+        cross-functional teams — developers, designers, product managers, and marketers —
+        shipping apps used by real people in the real world.
+      </PageIntro>
 
-      {/* Team types */}
       <div className="section">
-        <div className="section-header">
-          <h2 className="display-6 section-title">Team Types.</h2>
-        </div>
+        <SectionHeading title="Team Types." />
         <div className="section-content">
           <div className="row">
             {productionTracks.map((track) => (
@@ -51,11 +43,8 @@ export default function ProductionPage() {
         </div>
       </div>
 
-      {/* Roles */}
       <div className="section">
-        <div className="section-header">
-          <h2 className="display-6 section-title">Roles.</h2>
-        </div>
+        <SectionHeading title="Roles." />
         <div className="section-content">
           <div className="prod-roles">
             {roles.map((role) => (
@@ -71,11 +60,8 @@ export default function ProductionPage() {
         </div>
       </div>
 
-      {/* Apps we've built */}
       <div className="section">
-        <div className="section-header">
-          <h2 className="display-6 section-title">What We've Built.</h2>
-        </div>
+        <SectionHeading title="What We've Built." />
         <div className="row section-content">
           {apps.map((app) => (
             <div key={app.name} className="col-md-4">
@@ -99,19 +85,12 @@ export default function ProductionPage() {
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="section" style={{ textAlign: 'center', paddingBottom: 'calc(var(--section-v) * 1.5)' }}>
-        <div className="section-content">
-          <h2 className="display-6" style={{ marginBottom: '16px' }}>Think you're ready?</h2>
-          <p style={{ color: 'rgba(255,255,255,0.55)', marginBottom: '32px', fontSize: '15px' }}>
-            Production roles require an application and interview. We're looking for dedicated,
-            passionate students ready to ship.
-          </p>
-          <NavLink to="/apply" className="button" style={{ fontFamily: '"Comfortaa", cursive' }}>
-            <h4>Apply for Production</h4>
-          </NavLink>
-        </div>
-      </div>
+      <PageCta
+        title="Think you're ready?"
+        description="Production roles require an application and interview. We're looking for dedicated, passionate students ready to ship."
+        to="/apply"
+        actionLabel="Apply for Production"
+      />
     </Layout>
   )
 }
