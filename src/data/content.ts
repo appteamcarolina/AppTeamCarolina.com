@@ -184,6 +184,12 @@ export interface Founder {
   quote: string
 }
 
+export interface NetworkDestination {
+  company: string
+  logoSrc: string
+  logoAlt: string
+}
+
 export interface LeadershipCredit {
   name: string
   role: string
@@ -430,6 +436,134 @@ export const legacyLeadershipCredits: LeadershipCredit[] = [
   },
 ]
 
+export const networkDestinations: NetworkDestination[] = [
+  {
+    company: 'Netflix',
+    logoSrc: 'https://cdn.simpleicons.org/netflix',
+    logoAlt: 'Netflix logo',
+  },
+  {
+    company: 'Apple',
+    logoSrc: 'https://cdn.simpleicons.org/apple',
+    logoAlt: 'Apple logo',
+  },
+  {
+    company: 'Meta',
+    logoSrc: 'https://cdn.simpleicons.org/meta',
+    logoAlt: 'Meta logo',
+  },
+  {
+    company: 'Amazon',
+    logoSrc: 'https://cdn.simpleicons.org/amazon',
+    logoAlt: 'Amazon logo',
+  },
+  {
+    company: 'Google',
+    logoSrc: 'https://cdn.simpleicons.org/google',
+    logoAlt: 'Google logo',
+  },
+  {
+    company: 'PayPal',
+    logoSrc: 'https://cdn.simpleicons.org/paypal',
+    logoAlt: 'PayPal logo',
+  },
+  {
+    company: 'Fidelity',
+    logoSrc: 'https://cdn.simpleicons.org/fidelityinvestments',
+    logoAlt: 'Fidelity logo',
+  },
+  {
+    company: 'SAS',
+    logoSrc: 'https://cdn.simpleicons.org/sas',
+    logoAlt: 'SAS logo',
+  },
+  {
+    company: 'Wells Fargo',
+    logoSrc: 'https://cdn.simpleicons.org/wellsfargo',
+    logoAlt: 'Wells Fargo logo',
+  },
+  {
+    company: 'Datadog',
+    logoSrc: 'https://cdn.simpleicons.org/datadog',
+    logoAlt: 'Datadog logo',
+  },
+  {
+    company: 'Capital One',
+    logoSrc: 'https://cdn.simpleicons.org/capitalone',
+    logoAlt: 'Capital One logo',
+  },
+  {
+    company: 'Microsoft',
+    logoSrc: 'https://cdn.simpleicons.org/microsoft',
+    logoAlt: 'Microsoft logo',
+  },
+  {
+    company: 'Adobe',
+    logoSrc: 'https://cdn.simpleicons.org/adobe',
+    logoAlt: 'Adobe logo',
+  },
+  {
+    company: 'Pinterest',
+    logoSrc: 'https://cdn.simpleicons.org/pinterest',
+    logoAlt: 'Pinterest logo',
+  },
+  {
+    company: 'WillowTree',
+    logoSrc: 'https://cdn.simpleicons.org/willowtree',
+    logoAlt: 'WillowTree logo',
+  },
+  {
+    company: 'Google DeepMind',
+    logoSrc: 'https://cdn.simpleicons.org/googledeepmind',
+    logoAlt: 'Google DeepMind logo',
+  },
+  {
+    company: 'Walmart',
+    logoSrc: 'https://cdn.simpleicons.org/walmart',
+    logoAlt: 'Walmart logo',
+  },
+  {
+    company: 'Visa',
+    logoSrc: 'https://cdn.simpleicons.org/visa',
+    logoAlt: 'Visa logo',
+  },
+  {
+    company: 'Plaid',
+    logoSrc: 'https://cdn.simpleicons.org/plaid',
+    logoAlt: 'Plaid logo',
+  },
+  {
+    company: 'AWS',
+    logoSrc: 'https://cdn.simpleicons.org/amazonwebservices',
+    logoAlt: 'AWS logo',
+  },
+  {
+    company: 'Bank of America',
+    logoSrc: 'https://cdn.simpleicons.org/bankofamerica',
+    logoAlt: 'Bank of America logo',
+  },
+  {
+    company: 'JPMorgan Chase',
+    logoSrc: 'https://cdn.simpleicons.org/jpmorganchase',
+    logoAlt: 'JPMorgan Chase logo',
+  },
+  {
+    company: 'Goldman Sachs',
+    logoSrc: 'https://cdn.simpleicons.org/goldmansachs',
+    logoAlt: 'Goldman Sachs logo',
+  },
+  {
+    company: 'CoStar',
+    logoSrc: 'https://cdn.simpleicons.org/costar',
+    logoAlt: 'CoStar logo',
+  },
+  {
+    company: 'Appian',
+    logoSrc: 'https://cdn.simpleicons.org/appian',
+    logoAlt: 'Appian logo',
+  },
+]
+
 export const pillars: Pillar[] = [
   {
     icon: '/assets/idea.svg',
@@ -438,7 +572,7 @@ export const pillars: Pillar[] = [
     eyebrow: 'Education',
     imageSrc: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Students collaborating around a laptop',
-    text: "We teach the full iOS product journey, from interface thinking to implementation. Our curriculum is built to fill the gap between classroom theory and the practical product skills students need to ship with confidence.",
+    text: "We teach the full iOS product process, from product thinking and interface design to implementation. The goal is to give students practical foundations, real feedback, and the repetition that helps them contribute with confidence.",
   },
   {
     icon: '/assets/bezier.svg',
@@ -447,7 +581,7 @@ export const pillars: Pillar[] = [
     eyebrow: 'Craft',
     imageSrc: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Designer sketching product ideas on a glass wall',
-    text: "We care deeply about how products feel in a person’s hands. Members learn to value clarity, visual quality, and thoughtful interaction so the things we build feel intuitive, polished, and worth using.",
+    text: "We treat design as a core part of building good products, not something added at the end. Members learn to care about clarity, usability, and visual polish so the work feels intuitive, intentional, and ready for real users.",
     cardClass: 'mobile-card-margin-1',
   },
   {
@@ -457,7 +591,7 @@ export const pillars: Pillar[] = [
     eyebrow: 'Execution',
     imageSrc: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Developer working at a laptop with code on screen',
-    text: "We give builders of all experience levels the chance to sharpen their technical skills on real work. The goal is not just writing code, but learning how to collaborate, iterate, and deliver software that holds up in the real world.",
+    text: "We give students the chance to improve by building in teams, shipping real work, and seeing how strong products actually come together. That means writing better code, collaborating well, iterating quickly, and working toward a standard that feels closer to industry than to a classroom assignment.",
     cardClass: 'mobile-card-margin-2',
   },
 ]

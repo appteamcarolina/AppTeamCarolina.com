@@ -1,6 +1,6 @@
 import { Code2, Lightbulb, PencilRuler } from 'lucide-react'
 import Layout from '../../components/Layout'
-import { executives, productionTeams, founders, galleryImages } from '../../data/content'
+import { executives, productionTeams, founders, galleryImages, networkDestinations } from '../../data/content'
 import { AboutBackgroundPaths } from '@/components/ui/background-paths-variants'
 import PageHero from '@/components/site/PageHero'
 import Reveal from '@/components/site/Reveal'
@@ -39,7 +39,7 @@ const pillars = [
   {
     title: 'Learn',
     eyebrow: 'Education',
-    body: 'We teach the iOS product journey from design through development. Our curriculum goes beyond what most students get in class and gives members a practical, supportive place to build real product instincts.',
+    body: 'We teach the full iOS product process, from product thinking and interface design to implementation. The goal is to give students practical foundations, real feedback, and the repetition that helps them contribute with confidence.',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Students collaborating around a laptop',
     icon: Lightbulb,
@@ -47,7 +47,7 @@ const pillars = [
   {
     title: 'Design',
     eyebrow: 'Craft',
-    body: 'We hold high standards for how our products look and feel because great apps should be intuitive, exciting, and polished. Members learn to respect the role of thoughtful design in building things people actually love to use.',
+    body: 'We treat design as a core part of building good products, not something added at the end. Members learn to care about clarity, usability, and visual polish so the work feels intuitive, intentional, and ready for real users.',
     image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Designer sketching product ideas on glass',
     icon: PencilRuler,
@@ -55,7 +55,7 @@ const pillars = [
   {
     title: 'Develop',
     eyebrow: 'Execution',
-    body: 'We give iOS developers of all experience levels the chance to improve fast by building with others. Our environment is collaborative, ambitious, and grounded in the kind of technical growth that translates outside the classroom.',
+    body: 'We give students the chance to improve by building in teams, shipping real work, and seeing how strong products actually come together. That means writing better code, collaborating well, iterating quickly, and working toward a standard that feels closer to industry than to a classroom assignment.',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Developer working at a laptop with code on screen',
     icon: Code2,
@@ -121,9 +121,16 @@ export default function AboutPage() {
         </Reveal>
       </PageHero>
 
-      {/* ── What We Do ── */}
+      {/* ── Why We Exist ── */}
       <div className="section">
-        <SectionHeading title="What We Do." />
+        <SectionHeading title="Why We Exist." />
+        <div className="about-founders-intro">
+          <p>
+            App Team is for students who want more than surface-level exposure. We want to
+            give people real experience with product thinking, design, and development in a
+            community that is close-knit, collaborative, and serious about doing good work.
+          </p>
+        </div>
         <div className="about-pillars">
           {pillars.map((p) => (
             <GlassFeatureCard
@@ -242,6 +249,23 @@ export default function AboutPage() {
       </div>
 
       {/* ── Contact ── */}
+      <div className="section">
+        <SectionHeading title="Where We Go." />
+        <div className="about-network-intro">
+          <p>
+            Some of the kinds of places App Team members go on to intern, work, and grow.
+          </p>
+        </div>
+        <div className="about-network-grid">
+          {networkDestinations.map((item, index) => (
+            <Reveal key={`${item.company}-${index}`} className={`about-network-logo about-network-logo--${(index % 5) + 1}`} delay={index * 0.03}>
+              <div className="about-network-logo__tooltip" role="tooltip">{item.company}</div>
+              <img src={item.logoSrc} alt={item.logoAlt} className="about-network-logo__image" loading="lazy" />
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
       <div className="section">
         <SectionHeading title="Get In Touch." />
         <div className="about-contact">

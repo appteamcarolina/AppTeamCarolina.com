@@ -1,15 +1,3 @@
-/**
- * Teams
- *
- * "The Structure." section. Explains App Team's two tracks:
- *   - Learning track: Bootcamps and Apprenticeships (4 cards in a row)
- *   - Production track: Client Teams and Start-up Teams (2 cards in a row)
- *
- * Card data is sourced from content.ts so copy changes don't require
- * touching this component.
- */
-
-import { learningTracks, productionTracks } from '../../data/content'
 import Reveal from '@/components/site/Reveal'
 import SectionHeading from '@/components/site/SectionHeading'
 import { NavLink } from 'react-router-dom'
@@ -22,44 +10,43 @@ export default function Teams() {
       <div className="section-content">
         <Reveal className="home-track-intro" delay={0.04}>
           <p>
-            Students usually enter through one of two tracks: a learning path for building
-            foundations with structure and mentorship, or a production path for shipping polished
-            work on cross-functional teams.
+            Students usually enter through one of two tracks: Learning for building
+            foundations in iOS development and design, or Production for shipping
+            real work for clients, users, and communities.
           </p>
         </Reveal>
 
-        <div className="row">
-          {learningTracks.map((track, index) => (
-            <Reveal key={track.title} className="col-md-3" delay={index * 0.05}>
-              <div className={`card home-track-card${track.cardClass ? ` ${track.cardClass}` : ''}`}>
-                <div className="card-body">
-                  <p className="label learning"><mark>Learning</mark></p>
-                  <h4 className="card-title">
-                    <img className="teams-icon icon" src={track.icon} alt={track.iconAlt} />
-                    {track.title}
-                  </h4>
-                  <p className="card-text">{track.text}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <div className="home-path-grid">
+          <Reveal className="home-path-card home-path-card--learning" delay={0.08}>
+            <p className="home-path-card__label">Learning</p>
+            <h3 className="home-path-card__title">Start here if you&apos;re new to iOS or want to rebuild your fundamentals.</h3>
+            <p className="home-path-card__text">
+              Learning is where beginners and students who feel rusty can get strong in iOS
+              development and design. Through bootcamps, mentorship, and repeated practice,
+              members build the foundations that many of our alumni used to grow into the
+              skills they have now.
+            </p>
+            <div className="home-path-card__highlights">
+              <span>Swift & SwiftUI</span>
+              <span>UI/UX design</span>
+              <span>Mentorship</span>
+            </div>
+          </Reveal>
 
-        <div className="row second-row">
-          {productionTracks.map((track, index) => (
-            <Reveal key={track.title} className="col-md-6" delay={index * 0.06}>
-              <div className={`card home-track-card home-track-card--production${track.cardClass ? ` ${track.cardClass}` : ''}`}>
-                <div className="card-body">
-                  <p className="label production"><mark>Production</mark></p>
-                  <h4 className="card-title">
-                    <img className="teams-icon icon" src={track.icon} alt={track.iconAlt} />
-                    {track.title}
-                  </h4>
-                  <p className="card-text">{track.text}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+          <Reveal className="home-path-card home-path-card--production" delay={0.14}>
+            <p className="home-path-card__label">Production</p>
+            <h3 className="home-path-card__title">Build at a standard that feels closer to industry than to class.</h3>
+            <p className="home-path-card__text">
+              Production is where members work on real products for clients, users, and communities.
+              Teams collaborate across design, development, and product to ship work that is polished,
+              useful, and held to a professional standard.
+            </p>
+            <div className="home-path-card__highlights">
+              <span>Real clients</span>
+              <span>Cross-functional teams</span>
+              <span>Industry standards</span>
+            </div>
+          </Reveal>
         </div>
 
         <Reveal className="home-section-actions" delay={0.12}>

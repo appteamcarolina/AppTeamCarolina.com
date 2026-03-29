@@ -1,14 +1,8 @@
 import { motion } from 'framer-motion'
 import { NavLink } from 'react-router-dom'
 import { BackgroundPaths } from '@/components/ui/background-paths'
-import Reveal from '@/components/site/Reveal'
 
 const words = ['App', 'Team', 'Carolina']
-const heroStats = [
-  { value: 'Build', label: 'real products with real stakes' },
-  { value: 'Learn', label: 'through design and iOS mentorship' },
-  { value: 'Grow', label: 'inside a close-knit student studio' },
-]
 
 export default function Landing() {
   return (
@@ -56,8 +50,8 @@ export default function Landing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.75 }}
           >
-            App Team Carolina is a student-run iOS product studio where designers, developers, and builders
-            learn quickly, ship thoughtfully, and make work that matters.
+            App Team Carolina is a student-run iOS studio where people learn by designing,
+            building, and shipping products together.
           </motion.p>
 
           <motion.div
@@ -73,15 +67,6 @@ export default function Landing() {
               See our work →
             </NavLink>
           </motion.div>
-
-          <Reveal delay={1.08} className="landing-stat-row" y={14}>
-            {heroStats.map((item) => (
-              <div key={item.value} className="landing-stat-pill">
-                <span className="landing-stat-pill__value">{item.value}</span>
-                <span className="landing-stat-pill__label">{item.label}</span>
-              </div>
-            ))}
-          </Reveal>
         </div>
 
         <div className="layered-graphic" aria-hidden="true">
