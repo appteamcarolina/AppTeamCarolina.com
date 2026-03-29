@@ -10,6 +10,7 @@
 
 import { socials } from '../data/content'
 
+
 export default function Footer() {
   return (
     <div id="footer">

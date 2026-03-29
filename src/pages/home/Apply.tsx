@@ -29,16 +29,14 @@ export default function Apply() {
   return (
     <>
       {/* CTA hero */}
-      <div id="quick-apply" className="section apply">
-        <div className="section-content" style={{ paddingTop: '200px' }}>
-          <h1 className="logo">
-            <img className="logo-img" src="/assets/logo.svg" alt="App Team Carolina" />
-          </h1>
-          <h1 className="display-5 apply-header">Learn. Design. Develop.</h1>
-          <div className="button-container">
-            <div className="button apply-button btn" onClick={() => setModalOpen(true)}>
-              <h4>Apply Now for Spring 2026</h4>
-            </div>
+      <div id="quick-apply">
+        <h1 className="logo">
+          <img className="logo-img" src="/assets/logo.svg" alt="App Team Carolina" />
+        </h1>
+        <h1 className="display-5 apply-header">Learn. Design. Develop.</h1>
+        <div className="button-container">
+          <div className="button apply-button btn" onClick={() => setModalOpen(true)}>
+            <h4>Apply Now for Spring 2026</h4>
           </div>
         </div>
       </div>
