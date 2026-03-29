@@ -1,52 +1,119 @@
+import { useMemo, useState } from 'react'
 import { roles } from '../../data/content'
 import Layout from '../../components/Layout'
-import PageIntro from '@/components/site/PageIntro'
+import { motion } from 'framer-motion'
+import { ApplyBackgroundPaths } from '@/components/ui/background-paths-variants'
+import { PlaceCard } from '@/components/ui/card-22'
+import { Search } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import Reveal from '@/components/site/Reveal'
+
+const filters = ['All', 'Learning', 'Production', 'Design', 'Developer'] as const
+
+function getRoleTags(role: (typeof roles)[number]) {
+  const tags: string[] = []
+
+  if (role.title.includes('Bootcamp')) tags.push('No experience necessary')
+  else if (role.title.includes('Apprenticeship')) tags.push('Some experience expected')
+  else tags.push('Some experience expected')
+
+  if (role.title.includes('Designer') || role.title.includes('UI/UX')) tags.push('Design focused')
+  else if (role.title.includes('Developer') || role.title.includes('Backend') || role.title.includes('iOS')) tags.push('Builder focused')
+  else if (role.title.includes('Marketing')) tags.push('Storytelling focused')
+  else tags.push('Cross-functional')
+
+  return tags
+}
 
 export default function ApplyPage() {
+  const [activeFilter, setActiveFilter] = useState<(typeof filters)[number]>('All')
+  const [query, setQuery] = useState('')
+
+  const filteredRoles = useMemo(() => {
+    return roles.filter((role) => {
+      const matchesFilter =
+        activeFilter === 'All' ||
+        (activeFilter === 'Learning' && role.label === 'Learning') ||
+        (activeFilter === 'Production' && role.label === 'Production') ||
+        (activeFilter === 'Design' && (role.title.includes('Design') || role.title.includes('UI/UX'))) ||
+        (activeFilter === 'Developer' && (role.title.includes('Developer') || role.title.includes('Backend') || role.title.includes('iOS') || role.title.includes('Web')))
+
+      const haystack = `${role.title} ${role.subtitle ?? ''} ${role.description} ${role.requirements.join(' ')}`.toLowerCase()
+      const matchesQuery = query.trim() === '' || haystack.includes(query.toLowerCase())
+
+      return matchesFilter && matchesQuery
+    })
+  }, [activeFilter, query])
+
   return (
     <Layout>
-      <PageIntro title="Apply." bodyClassName="about-lead">
-        We're looking for passionate students across iOS development, UI/UX design, product
-        management, marketing, and more. Find the role that fits you and apply below.
-      </PageIntro>
+      <section className="apply-hero">
+        <div className="apply-hero-paths">
+          <ApplyBackgroundPaths />
+        </div>
+        <div className="apply-hero-glow" />
+        <div className="apply-hero-inner">
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.1 }}
+            className="apply-hero-copy"
+          >
+            <p className="landing-eyebrow">Apply · Fall Openings</p>
+            <h1 className="apply-hero-title">Find the role that fits how you want to build.</h1>
+            <p className="apply-hero-sub">
+              Whether you want to learn from scratch or join a production team shipping real work,
+              this is where you pick your lane. Every role is designed to help you grow with high standards and real momentum.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       <div className="section">
         <div className="section-content">
-          <div className="row">
-            {roles.map((role) => (
-              <div key={role.title} className="col-md-6">
-                <div className="card" style={{ marginBottom: 0 }}>
-                  <div className="card-body">
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                      <div>
-                        <h4 className="card-title" style={{ marginBottom: '2px' }}>{role.title}</h4>
-                        {role.subtitle && (
-                          <p style={{ margin: '0 0 8px', fontSize: '12px', color: 'rgba(255,255,255,0.55)', fontWeight: 'bold' }}>
-                            {role.subtitle}
-                          </p>
-                        )}
-                      </div>
-                      {role.label && (
-                        <p className={`label ${role.label.toLowerCase()}`}>
-                          <mark>{role.label}</mark>
-                        </p>
-                      )}
-                    </div>
-                    <p className="card-text" style={{ marginBottom: '12px' }}>{role.description}</p>
-                    <p className="req" style={{ marginBottom: '4px' }}>What are we looking for?</p>
-                    <ul style={{ margin: '4px 0 16px', paddingLeft: '20px', fontSize: '13.5px', lineHeight: 1.6 }}>
-                      {role.requirements.map((req, i) => (
-                        <li key={i}>{req}</li>
-                      ))}
-                    </ul>
-                    <a href={role.applyUrl} target="_blank" rel="noopener noreferrer">
-                      <div className="button" style={{ width: '100%', display: 'block', textAlign: 'center' }}>
-                        {role.applyLabel}
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+          <Reveal className="apply-controls">
+            <div className="apply-search">
+              <Search className="apply-search__icon h-4 w-4" />
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Search roles, skills, or teams"
+                className="apply-search__input"
+              />
+            </div>
+
+            <div className="apply-filter-row">
+              {filters.map((filter) => (
+                <button
+                  key={filter}
+                  type="button"
+                  onClick={() => setActiveFilter(filter)}
+                  className={activeFilter === filter ? 'apply-filter-chip apply-filter-chip--active' : 'apply-filter-chip'}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+
+            <div className="apply-results-meta">
+              <Badge variant="secondary">{filteredRoles.length} roles</Badge>
+            </div>
+          </Reveal>
+
+          <div className="apply-role-grid">
+            {filteredRoles.map((role, index) => (
+              <Reveal key={role.title} delay={index * 0.04}>
+                <PlaceCard
+                  title={role.title}
+                  subtitle={role.subtitle}
+                  label={role.label}
+                  description={role.description}
+                  requirements={role.requirements}
+                  applyUrl={role.applyUrl}
+                  applyLabel={role.applyLabel}
+                  tags={getRoleTags(role)}
+                />
+              </Reveal>
             ))}
           </div>
         </div>

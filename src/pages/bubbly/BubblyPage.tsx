@@ -9,6 +9,7 @@
  */
 
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 export default function BubblyPage() {
   return (
@@ -16,7 +17,12 @@ export default function BubblyPage() {
       {/* ── Hero ── */}
       <div className="bubbly-flex-container">
         {/* Left pane: branding and CTAs */}
-        <div className="bubbly-left">
+        <motion.div
+          className="bubbly-left"
+          initial={{ opacity: 0, x: -28 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="bubbly-aligner">
             <div>
               <img
@@ -45,10 +51,15 @@ export default function BubblyPage() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right pane: app mockup screenshot */}
-        <div className="bubbly-right">
+        <motion.div
+          className="bubbly-right"
+          initial={{ opacity: 0, x: 28, scale: 0.98 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="bubbly-aligner">
             <div>
               <img
@@ -58,20 +69,34 @@ export default function BubblyPage() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* ── Video Demo ── */}
-      <div id="demo" className="bubbly-demo">
+      <motion.div
+        id="demo"
+        className="bubbly-demo"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      >
         <h1 className="bubbly-title">Video Demo</h1>
         <video controls>
           <source src="/assets/bubbly-assets/bubbly-demo.mov" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </motion.div>
 
       {/* ── Footer ── */}
-      <div id="footer" className="bubbly-footer">
+      <motion.div
+        id="footer"
+        className="bubbly-footer"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.45 }}
+      >
         <div className="bubbly-footer-content">
           <p id="copyright">Made with ♥ by App Team Carolina in Chapel Hill, NC © 2022</p>
           <div className="bubbly-nav">
@@ -79,7 +104,7 @@ export default function BubblyPage() {
             <Link to="/bubbly/terms">Terms and Conditions</Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }

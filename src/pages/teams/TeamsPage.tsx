@@ -1,6 +1,7 @@
 import Layout from '../../components/Layout'
 import { learningTracks, productionTracks } from '../../data/content'
 import PageIntro from '@/components/site/PageIntro'
+import Reveal from '@/components/site/Reveal'
 import SectionHeading from '@/components/site/SectionHeading'
 
 export default function TeamsPage() {
@@ -16,8 +17,8 @@ export default function TeamsPage() {
         <SectionHeading title="Learning Track." />
         <div className="section-content">
           <div className="row">
-            {learningTracks.map((track) => (
-              <div key={track.title} className="col-md-3">
+            {learningTracks.map((track, index) => (
+              <Reveal key={track.title} className="col-md-3" delay={index * 0.05}>
                 <div className="card">
                   <div className="card-body">
                     <p className="label learning"><mark>Learning</mark></p>
@@ -28,7 +29,7 @@ export default function TeamsPage() {
                     <p className="card-text">{track.text}</p>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -38,8 +39,8 @@ export default function TeamsPage() {
         <SectionHeading title="Production Track." />
         <div className="section-content">
           <div className="row">
-            {productionTracks.map((track) => (
-              <div key={track.title} className="col-md-6">
+            {productionTracks.map((track, index) => (
+              <Reveal key={track.title} className="col-md-6" delay={index * 0.05}>
                 <div className="card">
                   <div className="card-body">
                     <p className="label production"><mark>Production</mark></p>
@@ -50,7 +51,7 @@ export default function TeamsPage() {
                     <p className="card-text">{track.text}</p>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

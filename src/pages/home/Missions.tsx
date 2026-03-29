@@ -7,32 +7,32 @@
  */
 
 import { pillars, galleryImages } from '../../data/content'
+import Reveal from '@/components/site/Reveal'
+import SectionHeading from '@/components/site/SectionHeading'
+import { NavLink } from 'react-router-dom'
 
 export default function Missions() {
   return (
     <div id="missions" className="section">
-      <div className="section-header">
-        <h2 className="display-6 section-title">The Purpose.</h2>
-      </div>
+      <SectionHeading title="Why We Exist." />
 
-      {/* Organization introduction blurb */}
-      <div className="blurb">
-        <p><i>
-          Welcome! We are App Team Carolina, a student iOS development team based out of the University of North
-          Carolina at Chapel Hill. We aren't like any regular student organization… Here at App Team, we run like a
-          company, where the people are at the heart of our work. Our team is multifaceted, as we train students in
-          the arts of iOS development and UI/UX design to create exciting apps for anyone and everyone to enjoy. Read
-          below to learn more about us!
-        </i></p>
-      </div>
+      <Reveal delay={0.04}>
+        <div className="blurb home-purpose-blurb">
+          <p>
+            App Team was built for students who want more than surface-level exposure.
+            We teach people how to think about product, how to care about craft, and how
+            to make ambitious work in a community that feels warm, serious, and genuinely collaborative.
+          </p>
+        </div>
+      </Reveal>
 
-      {/* Learn / Design / Develop pillar cards */}
-      <div className="pillar-content">
+      <div className="pillar-content home-purpose-grid">
         <div className="row">
-          {pillars.map((pillar) => (
-            <div key={pillar.title} className="col-md-4">
-              <div className={`card${pillar.cardClass ? ` ${pillar.cardClass}` : ''}`}>
+          {pillars.map((pillar, index) => (
+            <Reveal key={pillar.title} className="col-md-4" delay={index * 0.06}>
+              <div className={`card home-purpose-card${pillar.cardClass ? ` ${pillar.cardClass}` : ''}`}>
                 <div className="card-body">
+                  {pillar.eyebrow && <p className="home-purpose-card__eyebrow">{pillar.eyebrow}</p>}
                   <h4 className="card-title">
                     <img className="missions-icon icon" src={pillar.icon} alt={pillar.iconAlt} />
                     {pillar.title}
@@ -40,16 +40,21 @@ export default function Missions() {
                   <p className="card-text">{pillar.text}</p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
 
-      {/* Scrolling photo gallery */}
+      <Reveal className="home-section-actions" delay={0.12}>
+        <NavLink to="/about" className="landing-secondary-link">Learn more about App Team</NavLink>
+      </Reveal>
+
       <div className="background-graphic-wave">
         <div className="gallery">
           {galleryImages.map((img, i) => (
-            <img key={i} src={img.src} alt={img.alt} />
+            <Reveal key={i} delay={i * 0.04}>
+              <img src={img.src} alt={img.alt} />
+            </Reveal>
           ))}
         </div>
       </div>

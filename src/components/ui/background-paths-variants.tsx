@@ -9,7 +9,7 @@ const ANIM = {
 
 // ── About: top-right → bottom-left (mirror of home) ───────────────────────────
 function AboutFloatingPaths({ position }: { position: number }) {
-  const paths = Array.from({ length: 36 }, (_, i) => ({
+  const paths = Array.from({ length: 24 }, (_, i) => ({
     id: i,
     d: `M${1076 + i * 5 * position} -${189 + i * 6}C${1076 + i * 5 * position} -${189 + i * 6} ${1008 + i * 5 * position} ${216 - i * 6} ${544 + i * 5 * position} ${343 - i * 6}C${80 + i * 5 * position} ${470 - i * 6} ${12 + i * 5 * position} ${875 - i * 6} ${12 + i * 5 * position} ${875 - i * 6}`,
     width: 0.5 + i * 0.038,
@@ -32,7 +32,7 @@ export function AboutBackgroundPaths() {
 
 // ── Learning: horizontal sine waves that travel fully off both edges ──────────
 function LearningFloatingPaths({ flip }: { flip?: boolean }) {
-  const paths = Array.from({ length: 36 }, (_, i) => {
+  const paths = Array.from({ length: 24 }, (_, i) => {
     const cy = 20 + i * 8
     const amp = 34 + i * 5
     const f = flip ? -1 : 1
@@ -60,7 +60,7 @@ export function LearningBackgroundPaths() {
 
 // ── Production: elegant flowing S-curves, gently rising left→right ────────────
 function ProductionFloatingPaths({ invert }: { invert?: boolean }) {
-  const paths = Array.from({ length: 36 }, (_, i) => {
+  const paths = Array.from({ length: 24 }, (_, i) => {
     const f = invert ? -1 : 1
     const startY = 20 + i * 9
     const rise = (30 + i * 5) * f
@@ -108,4 +108,38 @@ function AppsFloatingPaths({ position }: { position: number }) {
 }
 export function AppsBackgroundPaths() {
   return <div className="absolute inset-0 overflow-hidden pointer-events-none"><AppsFloatingPaths position={1} /><AppsFloatingPaths position={-1} /></div>
+}
+
+// ── Apply: centered upward sweep with softer opposing cross-currents ──────────
+function ApplyFloatingPaths({ invert }: { invert?: boolean }) {
+  const paths = Array.from({ length: 22 }, (_, i) => {
+    const f = invert ? -1 : 1
+    return {
+      id: i,
+      d: `M${-120 + i * 16} ${540 + i * 7} C${40 + i * 10} ${360 - i * 2 * f} ${260 + i * 8} ${210 + i * 4 * f} ${530 + i * 10} ${40 - i * 7}`,
+      width: 0.45 + i * 0.035,
+      opacity: 0.05 + i * 0.016,
+    }
+  })
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      <svg className="w-full h-full" viewBox="0 0 696 316" fill="none">
+        {paths.map((p) => (
+          <motion.path
+            key={p.id}
+            d={p.d}
+            stroke={STROKE}
+            strokeWidth={p.width}
+            strokeOpacity={p.opacity}
+            initial={ANIM.initial}
+            animate={ANIM.animate}
+            transition={ANIM.transition(p.id)}
+          />
+        ))}
+      </svg>
+    </div>
+  )
+}
+export function ApplyBackgroundPaths() {
+  return <div className="absolute inset-0 overflow-hidden pointer-events-none"><ApplyFloatingPaths /><ApplyFloatingPaths invert /></div>
 }

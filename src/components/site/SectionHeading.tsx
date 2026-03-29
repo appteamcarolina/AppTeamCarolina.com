@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Reveal from '@/components/site/Reveal'
 
 type SectionHeadingProps = {
   title: ReactNode
@@ -14,10 +15,12 @@ export default function SectionHeading({
   const HeadingTag = level
 
   return (
-    <div className="section-header">
-      <HeadingTag className={titleClassName ?? 'display-6 section-title'}>
-        {title}
-      </HeadingTag>
-    </div>
+    <Reveal>
+      <div className="section-header">
+        <HeadingTag className={titleClassName ?? 'display-6 section-title'}>
+          {title}
+        </HeadingTag>
+      </div>
+    </Reveal>
   )
 }

@@ -9,49 +9,120 @@
  */
 
 import { apps } from '../../data/content'
+import Reveal from '@/components/site/Reveal'
+import SectionHeading from '@/components/site/SectionHeading'
+import { NavLink } from 'react-router-dom'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+
+const appMeta: Record<string, { summary: string; availability: string[] }> = {
+  Luminary: {
+    summary: 'Accessibility-focused campus navigation built to help people move through UNC with more confidence and clarity.',
+    availability: ['iPhone', 'Beta testing'],
+  },
+  Centible: {
+    summary: 'A finance product for students trying to better understand spending, habits, and healthier money decisions.',
+    availability: ['iPhone', 'Web preview'],
+  },
+  Bubbly: {
+    summary: 'An iPad literacy experience designed to support children and adolescents with Cortical Visual Impairment.',
+    availability: ['iPad', 'App Store'],
+  },
+}
 
 export default function AppProducts() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const activeApp = apps[activeIndex]
+
+  const goTo = (direction: number) => {
+    setActiveIndex((current) => {
+      const next = current + direction
+      if (next < 0) return apps.length - 1
+      if (next >= apps.length) return 0
+      return next
+    })
+  }
+
   return (
-    <div id="apps">
-      <div className="section-header">
-        <h2 className="display-6 section-title">The Products.</h2>
-        <div className="spacer"></div>
-      </div>
+    <div id="apps" className="section">
+      <SectionHeading title="What We Build." />
 
-      <div className="row section-content">
-        {apps.map((app) => (
-          <div key={app.name} className="col-md-4">
-            <div className={`card${app.cardClass ? ` ${app.cardClass}` : ''}`}>
-              <img className="card-img-top" src={app.coverSrc} alt={app.coverAlt} />
-              <div className="card-body">
-                <div className="apps-header">
-                  <h4 className="card-title">
-                    <img className="apps-icon icon" src={app.iconSrc} alt={app.iconAlt} />
-                    {app.name}
-                  </h4>
-                  <p><i>{app.started}</i></p>
-                </div>
+      <Reveal className="home-app-carousel section-content" delay={0.04}>
+        <div className="home-app-carousel__head">
+          <p className="home-app-carousel__summary">
+            A quick summary of the kinds of products our teams build, from accessibility and education to personal finance.
+          </p>
+          <div className="home-app-carousel__controls">
+            <button type="button" className="home-app-carousel__arrow" onClick={() => goTo(-1)} aria-label="Previous app">
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button type="button" className="home-app-carousel__arrow" onClick={() => goTo(1)} aria-label="Next app">
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
 
-                {/* Conditionally render a CTA link if the app has one */}
-                {app.link ? (
-                  <div className="project-content">
-                    <p className="card-text">{app.description}</p>
-                    <a
-                      href={app.link}
-                      target={app.link.startsWith('http') ? '_blank' : undefined}
-                      rel={app.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    >
-                      <div className="button secondary">{app.linkLabel}</div>
-                    </a>
-                  </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeApp.name}
+            className="home-app-feature"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="home-app-feature__media">
+              <img className="card-img-top" src={activeApp.coverSrc} alt={activeApp.coverAlt} />
+            </div>
+            <div className="home-app-feature__content">
+              <p className="home-app-feature__eyebrow">Product preview</p>
+              <h3 className="home-app-feature__title">
+                <img className="apps-icon icon" src={activeApp.iconSrc} alt={activeApp.iconAlt} />
+                {activeApp.name}
+              </h3>
+              <p className="home-app-feature__started">{activeApp.started}</p>
+              <div className="home-app-feature__tags">
+                {appMeta[activeApp.name]?.availability.map((item) => (
+                  <span key={item} className="home-app-feature__tag">{item}</span>
+                ))}
+              </div>
+              <p className="home-app-feature__text">{appMeta[activeApp.name]?.summary ?? activeApp.description}</p>
+              <div className="home-app-feature__actions">
+                <NavLink to="/apps" className="landing-secondary-link">Learn more</NavLink>
+                {activeApp.link ? (
+                  <a
+                    href={activeApp.link}
+                    target={activeApp.link.startsWith('http') ? '_blank' : undefined}
+                    rel={activeApp.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="button secondary"
+                  >
+                    {activeApp.linkLabel}
+                  </a>
                 ) : (
-                  <p className="card-text">{app.description}</p>
+                  <NavLink to="/apps" className="button secondary">See product details</NavLink>
                 )}
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="home-app-carousel__dots">
+          {apps.map((app, index) => (
+            <button
+              key={app.name}
+              type="button"
+              className={index === activeIndex ? 'home-app-carousel__dot home-app-carousel__dot--active' : 'home-app-carousel__dot'}
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Show ${app.name}`}
+            />
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal className="home-section-actions" delay={0.12}>
+        <NavLink to="/apps" className="landing-secondary-link">Explore all apps</NavLink>
+      </Reveal>
     </div>
   )
 }

@@ -10,20 +10,28 @@
  */
 
 import { learningTracks, productionTracks } from '../../data/content'
+import Reveal from '@/components/site/Reveal'
+import SectionHeading from '@/components/site/SectionHeading'
+import { NavLink } from 'react-router-dom'
 
 export default function Teams() {
   return (
     <div id="home-teams" className="section">
-      <div className="section-header">
-        <h2 className="display-6 section-title">The Structure.</h2>
-      </div>
+      <SectionHeading title="Choose Your Path." />
 
       <div className="section-content">
-        {/* Learning track — bootcamps and apprenticeships */}
+        <Reveal className="home-track-intro" delay={0.04}>
+          <p>
+            Students usually enter through one of two tracks: a learning path for building
+            foundations with structure and mentorship, or a production path for shipping polished
+            work on cross-functional teams.
+          </p>
+        </Reveal>
+
         <div className="row">
-          {learningTracks.map((track) => (
-            <div key={track.title} className="col-md-3">
-              <div className={`card${track.cardClass ? ` ${track.cardClass}` : ''}`}>
+          {learningTracks.map((track, index) => (
+            <Reveal key={track.title} className="col-md-3" delay={index * 0.05}>
+              <div className={`card home-track-card${track.cardClass ? ` ${track.cardClass}` : ''}`}>
                 <div className="card-body">
                   <p className="label learning"><mark>Learning</mark></p>
                   <h4 className="card-title">
@@ -33,15 +41,14 @@ export default function Teams() {
                   <p className="card-text">{track.text}</p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
-        {/* Production track — client and start-up teams */}
         <div className="row second-row">
-          {productionTracks.map((track) => (
-            <div key={track.title} className="col-md-6">
-              <div className={`card${track.cardClass ? ` ${track.cardClass}` : ''}`}>
+          {productionTracks.map((track, index) => (
+            <Reveal key={track.title} className="col-md-6" delay={index * 0.06}>
+              <div className={`card home-track-card home-track-card--production${track.cardClass ? ` ${track.cardClass}` : ''}`}>
                 <div className="card-body">
                   <p className="label production"><mark>Production</mark></p>
                   <h4 className="card-title">
@@ -51,9 +58,14 @@ export default function Teams() {
                   <p className="card-text">{track.text}</p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
+
+        <Reveal className="home-section-actions" delay={0.12}>
+          <NavLink to="/learning" className="landing-secondary-link">Learn more about Learning</NavLink>
+          <NavLink to="/production" className="landing-secondary-link">Learn more about Production</NavLink>
+        </Reveal>
       </div>
     </div>
   )

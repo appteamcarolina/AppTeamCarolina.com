@@ -5,6 +5,9 @@ export interface Pillar {
   iconAlt: string
   title: string
   text: string
+  imageSrc?: string
+  imageAlt?: string
+  eyebrow?: string
   cardClass?: string
 }
 
@@ -106,25 +109,355 @@ export const orgChart: OrgTier[] = [
   },
 ]
 
+export interface Executive {
+  title: string
+  name: string
+  major?: string
+  year?: string
+  initials: string
+}
+
+export interface ProductionLead {
+  role: string
+  name: string
+  major?: string
+  year?: string
+  initials: string
+}
+
+export interface ProductionTeam {
+  name: string
+  type: 'Client' | 'Startup'
+  members: number
+  semester: string
+  apps: { name: string; icon: string }[]
+  leads: { name: string }[]
+}
+
+export const productionTeams: ProductionTeam[] = [
+  {
+    name: 'Client Team 1',
+    type: 'Client',
+    members: 17,
+    semester: 'S25',
+    apps: [
+      { name: 'Cupboard', icon: '' },
+      { name: 'Bubbly',   icon: '/assets/bubbly-icon.svg' },
+    ],
+    leads: [{ name: 'Jacob Brown' }, { name: 'Kavya Sriram' }],
+  },
+  {
+    name: 'Client Team 2',
+    type: 'Client',
+    members: 17,
+    semester: 'F25',
+    apps: [
+      { name: 'PORCH', icon: '/assets/luminary.png' },
+    ],
+    leads: [{ name: 'Anisha Kundu' }, { name: 'Ashley Hinostroza' }],
+  },
+  {
+    name: 'Startup Team 1',
+    type: 'Startup',
+    members: 15,
+    semester: 'S25',
+    apps: [
+      { name: 'Centible', icon: '/assets/centible.png' },
+    ],
+    leads: [{ name: 'Charlotte Tsui' }, { name: 'Shikha Vyas' }],
+  },
+  {
+    name: 'Startup Team 2',
+    type: 'Startup',
+    members: 18,
+    semester: 'S25',
+    apps: [
+      { name: 'Luminary', icon: '/assets/luminary.png' },
+    ],
+    leads: [{ name: 'Josh Robertson' }, { name: 'Richard Lin' }],
+  },
+]
+
+export interface Founder {
+  name: string
+  role: string
+  quote: string
+}
+
+export interface LeadershipCredit {
+  name: string
+  role: string
+  era: string
+  sortYear: number
+}
+
+export const executives: Executive[] = [
+  { title: 'Chief Executive Officer',      name: 'President',                initials: 'CE', major: 'Computer Science',    year: 'Senior' },
+  { title: 'Chief Operating Officer',      name: 'VP of Operations',         initials: 'CO', major: 'Information Science', year: 'Junior' },
+  { title: 'Chief Technology Officer',     name: 'VP of Product',            initials: 'CT', major: 'Computer Science',    year: 'Senior' },
+  { title: 'Chief Design Officer',         name: 'Design Director',          initials: 'CD', major: 'Graphic Design',      year: 'Senior' },
+  { title: 'Chief People Officer',         name: 'People Director',          initials: 'CP', major: 'Psychology',          year: 'Junior' },
+  { title: 'Chief Marketing Officer',      name: 'Marketing Director',       initials: 'CM', major: 'Business',            year: 'Junior' },
+  { title: 'Chief Learning Officer',       name: 'Learning Director',        initials: 'CL', major: 'Computer Science',    year: 'Junior' },
+  { title: 'Chief Financial Officer',      name: 'Finance Director',         initials: 'CF', major: 'Economics',           year: 'Senior' },
+]
+
+export const productionLeads: ProductionLead[] = [
+  { role: 'iOS Development Lead',    name: 'iOS Lead',        initials: 'IL', major: 'Computer Science',    year: 'Junior' },
+  { role: 'Backend Lead',            name: 'Backend Lead',    initials: 'BL', major: 'Computer Science',    year: 'Junior' },
+  { role: 'Product Management Lead', name: 'PM Lead',         initials: 'PM', major: 'Information Science', year: 'Senior' },
+  { role: 'Marketing Lead',          name: 'Marketing Lead',  initials: 'ML', major: 'Business',            year: 'Junior' },
+  { role: 'UI/UX Design Lead',       name: 'Design Lead',     initials: 'DL', major: 'Graphic Design',      year: 'Senior' },
+  { role: 'iOS Bootcamp Lead',       name: 'Bootcamp Lead',   initials: 'BL', major: 'Computer Science',    year: 'Junior' },
+  { role: 'UI/UX Bootcamp Lead',     name: 'UX Bootcamp Lead',initials: 'UB', major: 'Graphic Design',      year: 'Sophomore' },
+  { role: 'Apprenticeship Lead',     name: 'Apprentice Lead', initials: 'AL', major: 'Computer Science',    year: 'Junior' },
+]
+
+export const founders: Founder[] = [
+  {
+    name: 'Kush',
+    role: 'Co-Founder',
+    quote: 'We wanted to build the kind of place we wished we had found earlier: somewhere students could care deeply, make ambitious things, and feel taken seriously before the world told them they were ready.',
+  },
+  {
+    name: 'Sam',
+    role: 'Co-Founder',
+    quote: 'There was always a bittersweet truth behind it: so many talented people at Carolina were learning in isolation. We made App Team to turn that lonely ambition into shared momentum.',
+  },
+  {
+    name: 'Morgan',
+    role: 'Co-Founder',
+    quote: 'We cared about more than shipping apps. We wanted to build a culture where high standards and kindness could coexist, because the best creative work usually grows out of both.',
+  },
+  {
+    name: 'Max',
+    role: 'Co-Founder',
+    quote: 'The organization started as a response to a gap, but it lasted because it became something more human: a place where people could become excellent together instead of competing alone.',
+  },
+  {
+    name: 'Beliz',
+    role: 'Co-Founder',
+    quote: 'What made it worth building was the idea that students could leave with more than portfolio pieces. They could leave with taste, discipline, confidence, and people who changed their lives.',
+  },
+]
+
+export const legacyLeadershipCredits: LeadershipCredit[] = [
+  {
+    name: 'Will Wang',
+    role: 'CEO',
+    era: 'Fall 2025 - Spring 2026',
+    sortYear: 2025,
+  },
+  {
+    name: 'Ben Chesser',
+    role: 'CEO',
+    era: 'Fall 2024 - Spring 2025',
+    sortYear: 2024,
+  },
+  {
+    name: 'Alec Nipp',
+    role: 'CEO',
+    era: 'Fall 2023 - Spring 2024',
+    sortYear: 2023,
+  },
+  {
+    name: 'Bailey Van Wormer',
+    role: 'CEO',
+    era: 'Fall 2022 - Spring 2023',
+    sortYear: 2022,
+  },
+  {
+    name: 'Beliz Yilmaz',
+    role: 'CEO',
+    era: 'Spring 2021 - Spring 2022',
+    sortYear: 2021,
+  },
+  {
+    name: 'Max Nabokow',
+    role: 'CEO',
+    era: 'Fall 2019 - Fall 2020',
+    sortYear: 2019,
+  },
+  {
+    name: 'Will Wang',
+    role: 'CFO',
+    era: 'Fall 2023 - Present',
+    sortYear: 2023,
+  },
+  {
+    name: 'Josh Myatt',
+    role: 'CFO',
+    era: 'Spring 2022 - Spring 2023',
+    sortYear: 2022,
+  },
+  {
+    name: 'Felipe Yanaga',
+    role: 'CFO',
+    era: 'Spring 2021 - Fall 2021',
+    sortYear: 2021,
+  },
+  {
+    name: 'Jiyoon Moon',
+    role: 'CFO',
+    era: 'Previous C-Suite',
+    sortYear: 2020,
+  },
+  {
+    name: 'Mackenzie Perry',
+    role: 'CTO',
+    era: 'Fall 2024 - Present',
+    sortYear: 2024,
+  },
+  {
+    name: 'Max Nabokow',
+    role: 'CTO',
+    era: 'Spring 2021 - Spring 2024',
+    sortYear: 2021,
+  },
+  {
+    name: 'Johanna Lohmus',
+    role: 'CTO',
+    era: 'Previous C-Suite',
+    sortYear: 2020,
+  },
+  {
+    name: 'Ryder Klein',
+    role: 'COO',
+    era: 'Fall 2024 - Fall 2025',
+    sortYear: 2024,
+  },
+  {
+    name: 'Ciya Joseph',
+    role: 'COO',
+    era: 'Fall 2023 - Spring 2024',
+    sortYear: 2023,
+  },
+  {
+    name: 'Noah Frahm',
+    role: 'COO',
+    era: 'Fall 2022 - Spring 2023',
+    sortYear: 2022,
+  },
+  {
+    name: 'Bailey Van Wormer',
+    role: 'COO',
+    era: 'Spring 2022',
+    sortYear: 2022,
+  },
+  {
+    name: 'Sam Shi',
+    role: 'CLO',
+    era: 'Spring 2021 - Spring 2024',
+    sortYear: 2021,
+  },
+  {
+    name: 'Alexandra Marum',
+    role: 'CLO',
+    era: 'Fall 2024 - Present',
+    sortYear: 2024,
+  },
+  {
+    name: 'Rishab “RJ” Jain',
+    role: 'CMO',
+    era: 'Spring 2020',
+    sortYear: 2020,
+  },
+  {
+    name: 'Kush Shah',
+    role: 'CMO',
+    era: 'Fall 2021',
+    sortYear: 2021,
+  },
+  {
+    name: 'Lauren Jones',
+    role: 'CMO',
+    era: 'Spring 2022',
+    sortYear: 2022,
+  },
+  {
+    name: 'Sarayu Yenumula',
+    role: 'CMO',
+    era: 'Fall 2022',
+    sortYear: 2022,
+  },
+  {
+    name: 'Halima Hasan',
+    role: 'CMO',
+    era: 'Spring 2023',
+    sortYear: 2023,
+  },
+  {
+    name: 'Will Astilla',
+    role: 'CMO',
+    era: 'Fall 2023',
+    sortYear: 2023,
+  },
+  {
+    name: 'Mitchell Anderson',
+    role: 'CMO',
+    era: 'Previous C-Suite',
+    sortYear: 2024,
+  },
+  {
+    name: 'Stabler Matrazzo',
+    role: 'CMO',
+    era: 'Previous C-Suite',
+    sortYear: 2024,
+  },
+  {
+    name: 'Kush Shah',
+    role: 'CPO',
+    era: 'Fall 2021',
+    sortYear: 2021,
+  },
+  {
+    name: 'Aidan Maguire',
+    role: 'CPO',
+    era: 'Previous C-Suite',
+    sortYear: 2024,
+  },
+  {
+    name: 'Morgan Roberts',
+    role: 'CDO',
+    era: 'Fall 2021 - Present',
+    sortYear: 2021,
+  },
+  {
+    name: 'Olivia Hammond',
+    role: 'CDO',
+    era: 'Previous C-Suite',
+    sortYear: 2020,
+  },
+]
+
 export const pillars: Pillar[] = [
   {
     icon: '/assets/idea.svg',
     iconAlt: 'Lightbulb Icon',
     title: 'Learn',
-    text: "We strive to provide quality education pertaining to the iOS app-making process from design to development. Our curriculum covers a wealth of information that you will not learn in Computer Science classes, and our passionate and hardworking instructors strive to provide you with the most successful learning environment possible.",
+    eyebrow: 'Education',
+    imageSrc: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+    imageAlt: 'Students collaborating around a laptop',
+    text: "We teach the full iOS product journey, from interface thinking to implementation. Our curriculum is built to fill the gap between classroom theory and the practical product skills students need to ship with confidence.",
   },
   {
     icon: '/assets/bezier.svg',
     iconAlt: 'Bezier Icon',
     title: 'Design',
-    text: "We hold high standards for the look and feel of our products because we know that apps must be intuitive, attractive, and exciting in order to be successful. We strive to provide unique design insight to our members, and we encourage all members to gain an understanding and respect for the importance of good design.",
+    eyebrow: 'Craft',
+    imageSrc: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
+    imageAlt: 'Designer sketching product ideas on a glass wall',
+    text: "We care deeply about how products feel in a person’s hands. Members learn to value clarity, visual quality, and thoughtful interaction so the things we build feel intuitive, polished, and worth using.",
     cardClass: 'mobile-card-margin-1',
   },
   {
     icon: '/assets/tools.svg',
     iconAlt: 'Tools Icon',
     title: 'Develop',
-    text: "We provide iOS developers of all skill levels the opportunity to improve their programming skills and ultimately produce real apps with our team. Our team is a welcoming community for iOS developers and enthusiasts to learn, grow, and create together while gaining the skills necessary to be successful in the industry.",
+    eyebrow: 'Execution',
+    imageSrc: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+    imageAlt: 'Developer working at a laptop with code on screen',
+    text: "We give builders of all experience levels the chance to sharpen their technical skills on real work. The goal is not just writing code, but learning how to collaborate, iterate, and deliver software that holds up in the real world.",
     cardClass: 'mobile-card-margin-2',
   },
 ]
