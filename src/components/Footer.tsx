@@ -1,36 +1,85 @@
-/**
- * Footer
- *
- * Site-wide footer. Displays a copyright notice and a row of social media
- * icon links (LinkedIn, newsletter, Instagram, Twitter, email).
- *
- * Social link data is sourced from content.ts so URLs and icons can be
- * updated in one place.
- */
-
+import { NavLink } from 'react-router-dom'
 import { socials } from '../data/content'
 
+const navLinks = [
+  { label: 'Home',       href: '/' },
+  { label: 'About',      href: '/about' },
+  { label: 'Learning',   href: '/learning' },
+  { label: 'Production', href: '/production' },
+  { label: 'Apps',       href: '/apps' },
+  { label: 'Apply',      href: '/apply' },
+]
 
 export default function Footer() {
   return (
-    <div id="footer">
-      <div className="footer-content">
-        <p>Made with ♥ by App Team Carolina in Chapel Hill, NC © 2025</p>
+    <footer id="footer">
+      {/* Skyline bleed — fades into footer content */}
+      <div className="footer-skyline-bg" aria-hidden="true" />
 
-        {/* Social media icon links */}
-        <div className="social-media">
+      <div className="footer-inner">
+        {/* Brand */}
+        <div className="footer-brand">
+          <div className="footer-logo-wrap">
+            <img src="/assets/logo.svg" alt="App Team Carolina" className="footer-logo" />
+          </div>
+          <p className="footer-tagline">App Team Carolina</p>
+          <p className="footer-sub">Building apps that matter,<br />from Chapel Hill to everywhere.</p>
+          <div className="footer-socials-row">
+            {socials.map((social) => (
+              <a
+                key={social.alt}
+                href={social.href}
+                target={social.target}
+                rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
+                className="footer-icon-link"
+                aria-label={social.alt}
+              >
+                <img src={social.iconSrc} alt={social.alt} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="footer-divider" />
+
+        {/* Links */}
+        <div className="footer-col">
+          <p className="footer-col-title">Pages</p>
+          {navLinks.map((link) => (
+            <NavLink key={link.label} to={link.href} className="footer-link">
+              {link.label}
+            </NavLink>
+          ))}
+        </div>
+
+        <div className="footer-col">
+          <p className="footer-col-title">Connect</p>
           {socials.map((social) => (
             <a
               key={social.alt}
               href={social.href}
               target={social.target}
               rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
+              className="footer-link"
             >
-              <img className="social-icon" src={social.iconSrc} alt={social.alt} />
+              {social.alt}
             </a>
           ))}
         </div>
+
+        <div className="footer-col">
+          <p className="footer-col-title">Contact</p>
+          <a href="mailto:appteamcarolina@unc.edu" className="footer-link">appteamcarolina@unc.edu</a>
+          <p className="footer-link-plain">University of North Carolina</p>
+          <p className="footer-link-plain">Chapel Hill, NC 27514</p>
+        </div>
       </div>
-    </div>
+
+      <div className="footer-bottom">
+        <p>© 2026 App Team Carolina · All rights reserved</p>
+        <p>Made with ♥ at UNC Chapel Hill</p>
+      </div>
+    </footer>
   )
 }

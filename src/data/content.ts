@@ -54,6 +54,58 @@ export interface Social {
   target?: string
 }
 
+export interface OrgMember {
+  name: string
+  role: string
+  major?: string
+  year?: string
+}
+
+export interface OrgTier {
+  tier: string
+  color: string
+  members: OrgMember[]
+}
+
+export const orgChart: OrgTier[] = [
+  {
+    tier: 'Executive',
+    color: '#4b8cb8',
+    members: [
+      { name: 'President',               role: 'President',               major: 'Computer Science', year: 'Senior' },
+      { name: 'VP of Operations',        role: 'VP of Operations',        major: 'Information Science', year: 'Junior' },
+      { name: 'VP of Product',           role: 'VP of Product',           major: 'Computer Science', year: 'Senior' },
+    ],
+  },
+  {
+    tier: 'Production Leads',
+    color: '#2f5b79',
+    members: [
+      { name: 'iOS Lead',                role: 'iOS Development Lead',    major: 'Computer Science', year: 'Junior' },
+      { name: 'Backend Lead',            role: 'Backend Lead',            major: 'Computer Science', year: 'Junior' },
+      { name: 'Product Management Lead', role: 'PM Lead',                 major: 'Information Science', year: 'Senior' },
+      { name: 'Marketing Lead',          role: 'Product Marketing Lead',  major: 'Business', year: 'Junior' },
+    ],
+  },
+  {
+    tier: 'Design Leads',
+    color: '#3a7a6a',
+    members: [
+      { name: 'UI/UX Lead',             role: 'UI/UX Design Lead',       major: 'Graphic Design', year: 'Senior' },
+      { name: 'Brand Lead',             role: 'Brand & Visual Lead',     major: 'Art & Design', year: 'Junior' },
+    ],
+  },
+  {
+    tier: 'Learning Leads',
+    color: '#5a4a8a',
+    members: [
+      { name: 'iOS Bootcamp Lead',       role: 'iOS Bootcamp Lead',       major: 'Computer Science', year: 'Junior' },
+      { name: 'UI/UX Bootcamp Lead',     role: 'UI/UX Bootcamp Lead',     major: 'Graphic Design', year: 'Sophomore' },
+      { name: 'Apprenticeship Lead',     role: 'Apprenticeship Lead',     major: 'Computer Science', year: 'Junior' },
+    ],
+  },
+]
+
 export const pillars: Pillar[] = [
   {
     icon: '/assets/idea.svg',

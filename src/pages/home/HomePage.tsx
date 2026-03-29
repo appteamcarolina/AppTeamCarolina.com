@@ -6,8 +6,7 @@
  * hero → mission → team structure → apps → apply.
  */
 
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Layout from '../../components/Layout'
 import Landing from './Landing'
 import Missions from './Missions'
 import Teams from './Teams'
@@ -16,16 +15,12 @@ import Apply from './Apply'
 
 export default function HomePage() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Landing />
-        <Missions />
-        <Teams />
-        <AppProducts />
-        <Apply />
-      </main>
-      <Footer />
-    </>
+    <Layout>
+      <Landing />
+      <Missions />
+      <Teams />
+      <AppProducts />
+      <Apply />
+    </Layout>
   )
 }
