@@ -6,6 +6,7 @@ import { useScroll } from '@/components/ui/use-scroll'
 import { cn } from '@/lib/utils'
 
 const links = [
+  { label: 'Home',       href: '/' },
   { label: 'About',      href: '/about' },
   { label: 'Learning',   href: '/learning' },
   { label: 'Production', href: '/production' },
