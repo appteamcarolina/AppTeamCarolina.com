@@ -2,57 +2,72 @@ import Reveal from '@/components/site/Reveal'
 import SectionHeading from '@/components/site/SectionHeading'
 import { NavLink } from 'react-router-dom'
 
+const pillars = [
+  {
+    eyebrow: 'Learning',
+    title: 'A hands-on environment where learning happens through making.',
+    points: [
+      'Where many members begin.',
+      'For anyone new to iOS, UI/UX design, or feeling rusty.',
+      'Foundations in development, interface design, and product thinking.',
+    ],
+    icon: '/assets/idea.svg',
+    iconAlt: 'Lightbulb icon',
+    href: '/learning',
+    cta: 'Explore Learning',
+  },
+  {
+    eyebrow: 'Production',
+    title: 'An environment to build things with real impact.',
+    points: [
+      'Real project work for clients, users, and communities.',
+      'See how design, development, and product fit together.',
+      'Experience closer to how strong product teams work.',
+    ],
+    icon: '/assets/tools.svg',
+    iconAlt: 'Tools icon',
+    href: '/production',
+    cta: 'Explore Production',
+  },
+] as const
+
 export default function Teams() {
   return (
     <div id="home-teams" className="section">
-      <SectionHeading title="Choose Your Path." />
+      <SectionHeading title="Our Pillars." />
 
-      <div className="section-content">
-        <Reveal className="home-track-intro" delay={0.04}>
+      <Reveal delay={0.04}>
+        <div className="blurb home-pillars-blurb">
           <p>
-            Students usually enter through one of two tracks: Learning for building
-            foundations in iOS development and design, or Production for shipping
-            real work for clients, users, and communities.
+            Our pillars are simple: give students a real place to learn, a real place to build, and a community that makes both feel meaningful.
           </p>
-        </Reveal>
-
-        <div className="home-path-grid">
-          <Reveal className="home-path-card home-path-card--learning" delay={0.08}>
-            <p className="home-path-card__label">Learning</p>
-            <h3 className="home-path-card__title">Start here if you&apos;re new to iOS or want to rebuild your fundamentals.</h3>
-            <p className="home-path-card__text">
-              Learning is where beginners and students who feel rusty can get strong in iOS
-              development and design. Through bootcamps, mentorship, and repeated practice,
-              members build the foundations that many of our alumni used to grow into the
-              skills they have now.
-            </p>
-            <div className="home-path-card__highlights">
-              <span>Swift & SwiftUI</span>
-              <span>UI/UX design</span>
-              <span>Mentorship</span>
-            </div>
-          </Reveal>
-
-          <Reveal className="home-path-card home-path-card--production" delay={0.14}>
-            <p className="home-path-card__label">Production</p>
-            <h3 className="home-path-card__title">Build at a standard that feels closer to industry than to class.</h3>
-            <p className="home-path-card__text">
-              Production is where members work on real products for clients, users, and communities.
-              Teams collaborate across design, development, and product to ship work that is polished,
-              useful, and held to a professional standard.
-            </p>
-            <div className="home-path-card__highlights">
-              <span>Real clients</span>
-              <span>Cross-functional teams</span>
-              <span>Industry standards</span>
-            </div>
-          </Reveal>
         </div>
+      </Reveal>
 
-        <Reveal className="home-section-actions" delay={0.12}>
-          <NavLink to="/learning" className="landing-secondary-link">Learn more about Learning</NavLink>
-          <NavLink to="/production" className="landing-secondary-link">Learn more about Production</NavLink>
-        </Reveal>
+      <div className="home-pillars-stack">
+        {pillars.map((pillar, index) => (
+          <Reveal
+            key={pillar.eyebrow}
+            delay={0.08 + index * 0.06}
+            className="home-pillars-block"
+          >
+            <div className="home-pillars-block__icon-shell">
+              <img src={pillar.icon} alt={pillar.iconAlt} className="home-pillars-block__icon" />
+            </div>
+            <div className="home-pillars-block__content">
+              <p className="home-pillars-block__eyebrow">{pillar.eyebrow}</p>
+              <h3 className="home-pillars-block__title">{pillar.title}</h3>
+              <ul className="home-pillars-block__points">
+                {pillar.points.map((point) => (
+                  <li key={point} className="home-pillars-block__point">{point}</li>
+                ))}
+              </ul>
+              <NavLink to={pillar.href} className="landing-secondary-link home-pillars-block__link">
+                {pillar.cta}
+              </NavLink>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </div>
   )

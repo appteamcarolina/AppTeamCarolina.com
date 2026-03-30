@@ -19,7 +19,7 @@ const homePillars = [
     eyebrow: 'Education',
     title: 'Learn',
     description:
-      'Get practical foundations in iOS development and product thinking through feedback, repetition, and real project work.',
+      'Get practical foundations in iOS development, interface design, and product thinking through feedback, repetition, and real project work.',
     className: 'home-offer-block--top',
   },
   {

@@ -15,20 +15,28 @@ import { NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 const appMeta: Record<string, { summary: string; availability: string[] }> = {
   Luminary: {
-    summary: 'Accessibility-focused campus navigation built to help people move through UNC with more confidence and clarity.',
+    summary: 'Luminary helps people navigate campus more confidently by focusing on accessibility barriers, route clarity, and shared reporting.',
     availability: ['iPhone', 'Beta testing'],
   },
   Centible: {
-    summary: 'A finance product for students trying to better understand spending, habits, and healthier money decisions.',
-    availability: ['iPhone', 'Web preview'],
+    summary: 'Centible is a student finance app built to make spending easier to understand and day-to-day money habits easier to manage.',
+    availability: ['iPhone', 'On the App Store'],
   },
   Bubbly: {
-    summary: 'An iPad literacy experience designed to support children and adolescents with Cortical Visual Impairment.',
-    availability: ['iPad', 'App Store'],
+    summary: 'Bubbly is an iPad experience designed to support children and adolescents with Cortical Visual Impairment through playful visual exercises.',
+    availability: ['iPad', 'On the App Store'],
   },
+}
+
+function getTagTone(label: string) {
+  if (label === 'iPhone' || label === 'iPad') return 'home-app-feature__tag--device'
+  if (label === 'On the App Store' || label === 'App Store') return 'home-app-feature__tag--store'
+  if (label === 'Beta testing') return 'home-app-feature__tag--beta'
+  return ''
 }
 
 export default function AppProducts() {
@@ -51,7 +59,7 @@ export default function AppProducts() {
       <Reveal className="home-app-carousel section-content" delay={0.04}>
         <div className="home-app-carousel__head">
           <p className="home-app-carousel__summary">
-            A quick summary of the kinds of products our teams build, from accessibility and education to personal finance.
+            Our teams and apps span accessibility, education, and personal finance, serving students, communities, and real users in different ways.
           </p>
           <div className="home-app-carousel__controls">
             <button type="button" className="home-app-carousel__arrow" onClick={() => goTo(-1)} aria-label="Previous app">
@@ -84,7 +92,7 @@ export default function AppProducts() {
               <p className="home-app-feature__started">{activeApp.started}</p>
               <div className="home-app-feature__tags">
                 {appMeta[activeApp.name]?.availability.map((item) => (
-                  <span key={item} className="home-app-feature__tag">{item}</span>
+                  <span key={item} className={cn('home-app-feature__tag', getTagTone(item))}>{item}</span>
                 ))}
               </div>
               <p className="home-app-feature__text">{appMeta[activeApp.name]?.summary ?? activeApp.description}</p>

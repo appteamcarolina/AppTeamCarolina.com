@@ -4,22 +4,22 @@ import { AppsBackgroundPaths } from '@/components/ui/background-paths-variants'
 import PageHero from '@/components/site/PageHero'
 import Reveal from '@/components/site/Reveal'
 import SectionHeading from '@/components/site/SectionHeading'
-import { Badge } from '@/components/ui/badge'
+import { cn } from '@/lib/utils'
 
 const appPrinciples = [
   {
     label: 'Intentional',
-    title: 'We solve real student and community problems',
+    title: 'Products start with real needs',
     text: 'Our projects are not fake portfolio prompts. They are rooted in accessibility, education, finance, and day-to-day needs people actually have.',
   },
   {
     label: 'Collaborative',
-    title: 'Every product is shaped by multiple disciplines',
+    title: 'Teams work across disciplines',
     text: 'Design, development, product, and marketing all shape the outcome, which makes the work more thoughtful and more reflective of how good products are actually made.',
   },
   {
     label: 'Polished',
-    title: 'We care about how software feels',
+    title: 'Quality matters as much as shipping',
     text: 'We want the things we ship to feel clear, useful, and well-crafted, not just technically complete.',
   },
 ]
@@ -33,16 +33,23 @@ const appStats = [
 const appMeta: Record<string, { devices: string[]; availability: string[] }> = {
   Luminary: {
     devices: ['iPhone'],
-    availability: ['Beta testing'],
+    availability: ['In development'],
   },
   Centible: {
     devices: ['iPhone'],
-    availability: ['Web preview', 'App in progress'],
+    availability: ['On the App Store'],
   },
   Bubbly: {
     devices: ['iPad'],
-    availability: ['App Store'],
+    availability: ['On the App Store'],
   },
+}
+
+function getBadgeTone(label: string) {
+  if (label === 'iPhone' || label === 'iPad') return 'apps-showcase-card__badge--device-special'
+  if (label === 'On the App Store' || label === 'App Store') return 'apps-showcase-card__badge--store'
+  if (label === 'In development') return 'apps-showcase-card__badge--beta'
+  return ''
 }
 
 export default function AppsPage() {
@@ -87,54 +94,52 @@ export default function AppsPage() {
                   <img className="card-img-top" src={app.coverSrc} alt={app.coverAlt} />
                 </div>
                 <div className="apps-showcase-card__copy">
-                  <div className="apps-showcase-card__top">
-                    <div className="apps-header">
-                      <h4 className="card-title">
-                        <img
-                          className="apps-icon icon"
-                          src={app.iconSrc}
-                          alt={app.iconAlt}
-                          style={{ borderRadius: '5px', width: '28px', height: '28px' }}
-                        />
-                        {app.name}
-                      </h4>
-                      <p><i style={{ fontSize: '13px', color: 'rgba(255,255,255,0.65)' }}>{app.started}</i></p>
+                  <div className="apps-showcase-card__header">
+                    <p className="apps-showcase-card__eyebrow">Product</p>
+                    <div className="apps-showcase-card__title-row">
+                      <img
+                        className="apps-showcase-card__icon"
+                        src={app.iconSrc}
+                        alt={app.iconAlt}
+                      />
+                      <div className="apps-showcase-card__title-copy">
+                        <h3 className="apps-showcase-card__name">{app.name}</h3>
+                        <p className="apps-showcase-card__started">{app.started}</p>
+                      </div>
                     </div>
-                    <Badge variant="secondary">Product</Badge>
                   </div>
 
                   <div className="apps-showcase-card__meta">
                     {appMeta[app.name]?.devices.map((device) => (
-                      <Badge key={`${app.name}-${device}`} variant="outline" className="apps-showcase-card__badge">
+                      <span key={`${app.name}-${device}`} className={cn('apps-showcase-card__badge apps-showcase-card__badge--device', getBadgeTone(device))}>
                         {device}
-                      </Badge>
+                      </span>
                     ))}
                     {appMeta[app.name]?.availability.map((status) => (
-                      <Badge key={`${app.name}-${status}`} variant="default" className="apps-showcase-card__badge">
+                      <span key={`${app.name}-${status}`} className={cn('apps-showcase-card__badge apps-showcase-card__badge--status', getBadgeTone(status))}>
                         {status}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
 
                   <p className="apps-showcase-card__text">{app.description}</p>
 
-                  {app.link ? (
-                    <div className="project-content">
+                  <div className="apps-showcase-card__footer">
+                    {app.link ? (
                       <a
                         href={app.link}
                         target={app.link.startsWith('http') ? '_blank' : undefined}
                         rel={app.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="button apps-showcase-card__button"
                       >
-                        <div className="button secondary" style={{ marginTop: '12px' }}>{app.linkLabel}</div>
+                        {app.linkLabel}
                       </a>
-                    </div>
-                  ) : (
-                    <div className="project-content">
-                      <div className="landing-secondary-link apps-showcase-card__status-link">
-                        Currently in active development
+                    ) : (
+                      <div className="apps-showcase-card__status-note">
+                        Currently being built and refined by the team.
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </article>
             </Reveal>

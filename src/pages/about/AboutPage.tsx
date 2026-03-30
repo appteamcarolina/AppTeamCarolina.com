@@ -1,90 +1,171 @@
-import { Code2, Lightbulb, PencilRuler } from 'lucide-react'
+import { useState } from 'react'
+import {
+  BriefcaseBusiness,
+  Cpu,
+  GraduationCap,
+  Heart,
+  Landmark,
+  Megaphone,
+  PenTool,
+  Rows3,
+  Users,
+} from 'lucide-react'
+import {
+  siApple,
+  siAppian,
+  siBankofamerica,
+  siBoeing,
+  siCisco,
+  siDatadog,
+  siDatabricks,
+  siDeepmind,
+  siDoordash,
+  siEpicgames,
+  siGoldmansachs,
+  siGoogle,
+  siGithub,
+  siIntuit,
+  siMeta,
+  siNetflix,
+  siNvidia,
+  siPaypal,
+  siPinterest,
+  siRedhat,
+  siStripe,
+  siTesla,
+  siVisa,
+  siWellsfargo,
+} from 'simple-icons'
 import Layout from '../../components/Layout'
 import { executives, productionTeams, founders, galleryImages, networkDestinations } from '../../data/content'
 import { AboutBackgroundPaths } from '@/components/ui/background-paths-variants'
 import PageHero from '@/components/site/PageHero'
 import Reveal from '@/components/site/Reveal'
 import SectionHeading from '@/components/site/SectionHeading'
-import { GlassFeatureCard } from '@/components/ui/glass-feature-card'
 import TestimonialSection from '@/components/ui/testimonials'
 
-const offers = [
+const whyWeExistCards = [
   {
     label: 'Learning',
     icon: '/assets/books.svg',
     title: 'iOS Bootcamp',
-    desc: 'Learn Swift, SwiftUI, and Xcode from scratch. No experience needed — just curiosity.',
+    desc: 'A place to learn iOS development from the ground up through practice, feedback, and product-minded thinking.',
   },
   {
     label: 'Learning',
     icon: '/assets/eyedropper.svg',
     title: 'UI/UX Bootcamp',
-    desc: 'Master Figma and the craft of designing products people actually love to use.',
+    desc: 'A place to build real design foundations in interface, interaction, critique, and visual decision-making.',
   },
   {
     label: 'Learning',
     icon: '/assets/blocks.svg',
-    title: 'Apprenticeship',
-    desc: 'Bridge the gap between learning and shipping. Build real projects with senior mentorship.',
+    title: 'iOS Apprenticeship',
+    desc: 'A bridge from learning to shipping, where members start applying Swift and SwiftUI with support from stronger builders.',
+  },
+  {
+    label: 'Learning',
+    icon: '/assets/bezier.svg',
+    title: 'UI/UX Apprenticeship',
+    desc: 'A bridge into product design work, where members move from exercises into real flows, systems, and team feedback.',
   },
   {
     label: 'Production',
     icon: '/assets/rocket.svg',
-    title: 'Production Teams',
-    desc: 'Join a cross-functional team and ship apps used by real people in the real world.',
-  },
-]
-
-const pillars = [
-  {
-    title: 'Learn',
-    eyebrow: 'Education',
-    body: 'We teach the full iOS product process, from product thinking and interface design to implementation. The goal is to give students practical foundations, real feedback, and the repetition that helps them contribute with confidence.',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Students collaborating around a laptop',
-    icon: Lightbulb,
+    title: 'Startup Production',
+    desc: 'Teams build original products around real needs, with room for ownership, iteration, and long-term product thinking.',
   },
   {
-    title: 'Design',
-    eyebrow: 'Craft',
-    body: 'We treat design as a core part of building good products, not something added at the end. Members learn to care about clarity, usability, and visual polish so the work feels intuitive, intentional, and ready for real users.',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Designer sketching product ideas on glass',
-    icon: PencilRuler,
-  },
-  {
-    title: 'Develop',
-    eyebrow: 'Execution',
-    body: 'We give students the chance to improve by building in teams, shipping real work, and seeing how strong products actually come together. That means writing better code, collaborating well, iterating quickly, and working toward a standard that feels closer to industry than to a classroom assignment.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Developer working at a laptop with code on screen',
-    icon: Code2,
+    label: 'Production',
+    icon: '/assets/tools.svg',
+    title: 'Client Production',
+    desc: 'Teams partner with organizations and communities to ship useful software for real people and real constraints.',
   },
 ]
 
 const founderOrder = ['Max', 'Beliz', 'Sam', 'Morgan', 'Kush']
 
-function InitialsAvatar({ initials, size = 72 }: { initials: string; size?: number }) {
+const leadershipIconMap = {
+  'Chief Executive Officer': BriefcaseBusiness,
+  'Chief Operating Officer': Rows3,
+  'Chief Technology Officer': Cpu,
+  'Chief Design Officer': PenTool,
+  'Chief People Officer': Heart,
+  'Chief Marketing Officer': Megaphone,
+  'Chief Learning Officer': GraduationCap,
+  'Chief Financial Officer': Landmark,
+} as const
+
+const companyIconMap = {
+  Netflix: siNetflix,
+  Apple: siApple,
+  Meta: siMeta,
+  Google: siGoogle,
+  PayPal: siPaypal,
+  'Wells Fargo': siWellsfargo,
+  Datadog: siDatadog,
+  Pinterest: siPinterest,
+  'Google DeepMind': siDeepmind,
+  Visa: siVisa,
+  'Bank of America': siBankofamerica,
+  'Goldman Sachs': siGoldmansachs,
+  Appian: siAppian,
+  DoorDash: siDoordash,
+  NVIDIA: siNvidia,
+  Tesla: siTesla,
+  Cisco: siCisco,
+  Stripe: siStripe,
+  Boeing: siBoeing,
+  Intuit: siIntuit,
+  Databricks: siDatabricks,
+  GitHub: siGithub,
+  'Epic Games': siEpicgames,
+  'Red Hat': siRedhat,
+} as const
+
+function CompanyLogo({
+  company,
+  logoSrc,
+  logoAlt,
+}: {
+  company: string
+  logoSrc: string
+  logoAlt: string
+}) {
+  const [failed, setFailed] = useState(false)
+  const localIcon = companyIconMap[company as keyof typeof companyIconMap]
+
+  if (localIcon) {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        aria-label={logoAlt}
+        role="img"
+        className="about-network-logo__icon"
+      >
+        <path d={localIcon.path} fill={`#${localIcon.hex}`} />
+      </svg>
+    )
+  }
+
+  if (failed) {
+    return (
+      <span className="about-network-logo__fallback" aria-label={company}>
+        {company}
+      </span>
+    )
+  }
+
   return (
-    <div
-      style={{
-        width: size,
-        height: size,
-        borderRadius: '50%',
-        background: 'linear-gradient(135deg, rgba(75,140,184,0.25), rgba(75,140,184,0.08))',
-        border: '1px solid rgba(75,140,184,0.3)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: size * 0.28,
-        fontWeight: 700,
-        color: 'rgba(75,140,184,0.85)',
-        letterSpacing: '0.04em',
-        flexShrink: 0,
-      }}
-    >
-      {initials}
-    </div>
+    <img
+      src={logoSrc}
+      alt={logoAlt}
+      className="about-network-logo__image"
+      loading="lazy"
+      decoding="async"
+      referrerPolicy="no-referrer"
+      onError={() => setFailed(true)}
+    />
   )
 }
 
@@ -100,9 +181,10 @@ export default function AboutPage() {
         title={<>Exceptional apps<br />start with exceptional people.</>}
         description={
           <>
-            We&apos;re App Team Carolina, a student iOS studio at UNC Chapel Hill built
-            by people who genuinely love what they make. We run like a real company,
-            care like a tight-knit team, and ship apps that actually matter to people.
+            We&apos;re App Team Carolina, a student-run nonprofit at UNC Chapel Hill
+            where people learn to design, build, and ship thoughtful products together.
+            We care about doing meaningful work, getting better at the craft, and
+            building a community people genuinely want to be part of.
           </>
         }
         background={<AboutBackgroundPaths />}
@@ -126,35 +208,17 @@ export default function AboutPage() {
         <SectionHeading title="Why We Exist." />
         <div className="about-founders-intro">
           <p>
-            App Team is for students who want more than surface-level exposure. We want to
-            give people real experience with product thinking, design, and development in a
-            community that is close-knit, collaborative, and serious about doing good work.
+            App Team exists to give people real experience across design, development,
+            and product work in a community that is collaborative, ambitious, and
+            serious about doing things well.
           </p>
         </div>
-        <div className="about-pillars">
-          {pillars.map((p) => (
-            <GlassFeatureCard
-              key={p.title}
-              title={p.title}
-              description={p.body}
-              image={p.image}
-              imageAlt={p.imageAlt}
-              eyebrow={p.eyebrow}
-              icon={p.icon}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* ── What We Offer ── */}
-      <div className="section">
-        <SectionHeading title="What We Offer." />
-        <div className="about-offers">
-          {offers.map((o, i) => (
+        <div className="about-offers about-offers--expanded">
+          {whyWeExistCards.map((o, i) => (
             <Reveal
               key={o.title}
               className="about-offer-card"
-              delay={i * 0.06}
+              delay={i * 0.05}
             >
               <p className={`label ${o.label.toLowerCase()}`}><mark>{o.label}</mark></p>
               <img src={o.icon} alt={o.title} className="about-offer-icon" />
@@ -165,7 +229,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* ── Gallery ── */}
+      {/* ── What We Offer ── */}
       <div className="background-graphic-wave">
         <div className="gallery">
           {galleryImages.map((img, i) => (
@@ -188,16 +252,16 @@ export default function AboutPage() {
         <p className="about-section-note">Update names in <code>src/data/content.ts</code>.</p>
         <div className="about-exec-grid">
           {executives.map((e, i) => (
-            <Reveal
-              key={e.title}
-              className="about-exec-card"
-              delay={i * 0.05}
-            >
-              <InitialsAvatar initials={e.initials} size={64} />
+            <Reveal key={e.title} className="about-exec-card" delay={i * 0.05}>
+              <div className="about-exec-icon-shell">
+                {(() => {
+                  const Icon = leadershipIconMap[e.title as keyof typeof leadershipIconMap] ?? Users
+                  return <Icon className="h-4 w-4" />
+                })()}
+              </div>
               <div className="about-exec-info">
                 <p className="about-exec-name">{e.name}</p>
                 <p className="about-exec-title">{e.title}</p>
-                {e.major && <p className="about-exec-meta">{e.major} · {e.year}</p>}
               </div>
             </Reveal>
           ))}
@@ -234,12 +298,9 @@ export default function AboutPage() {
 
               <div className="about-team-leads">
                 <p className="about-team-leads-label">Production Leads</p>
-                <div className="about-team-lead-bubbles">
+                <div className="about-team-lead-list">
                   {team.leads.map((l) => (
-                    <div key={l.name} className="about-team-lead-bubble" title={l.name}>
-                      <InitialsAvatar initials={l.name.split(' ').map(n => n[0]).join('')} size={36} />
-                      <span className="about-team-lead-bubble-name">{l.name}</span>
-                    </div>
+                    <span key={l.name} className="about-team-lead-name">{l.name}</span>
                   ))}
                 </div>
               </div>
@@ -253,14 +314,14 @@ export default function AboutPage() {
         <SectionHeading title="Where We Go." />
         <div className="about-network-intro">
           <p>
-            Some of the kinds of places App Team members go on to intern, work, and grow.
+            Some of the places members have gone on to intern, work, and keep growing.
           </p>
         </div>
         <div className="about-network-grid">
           {networkDestinations.map((item, index) => (
             <Reveal key={`${item.company}-${index}`} className={`about-network-logo about-network-logo--${(index % 5) + 1}`} delay={index * 0.03}>
               <div className="about-network-logo__tooltip" role="tooltip">{item.company}</div>
-              <img src={item.logoSrc} alt={item.logoAlt} className="about-network-logo__image" loading="lazy" />
+              <CompanyLogo company={item.company} logoSrc={item.logoSrc} logoAlt={item.logoAlt} />
             </Reveal>
           ))}
         </div>

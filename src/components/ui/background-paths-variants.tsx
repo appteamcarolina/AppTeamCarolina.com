@@ -31,9 +31,9 @@ export function AboutBackgroundPaths() {
 }
 
 // ── Learning: horizontal sine waves that travel fully off both edges ──────────
-function LearningFloatingPaths({ flip }: { flip?: boolean }) {
-  const paths = Array.from({ length: 24 }, (_, i) => {
-    const cy = 20 + i * 8
+function LearningFloatingPaths({ flip, offset = 0 }: { flip?: boolean; offset?: number }) {
+  const paths = Array.from({ length: 16 }, (_, i) => {
+    const cy = 28 + offset + i * 10
     const amp = 34 + i * 5
     const f = flip ? -1 : 1
     return {
@@ -55,14 +55,19 @@ function LearningFloatingPaths({ flip }: { flip?: boolean }) {
   )
 }
 export function LearningBackgroundPaths() {
-  return <div className="absolute inset-0 overflow-hidden pointer-events-none"><LearningFloatingPaths /><LearningFloatingPaths flip /></div>
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <LearningFloatingPaths offset={0} />
+      <LearningFloatingPaths flip offset={18} />
+    </div>
+  )
 }
 
 // ── Production: elegant flowing S-curves, gently rising left→right ────────────
 function ProductionFloatingPaths({ invert }: { invert?: boolean }) {
-  const paths = Array.from({ length: 24 }, (_, i) => {
+  const paths = Array.from({ length: 16 }, (_, i) => {
     const f = invert ? -1 : 1
-    const startY = 20 + i * 9
+    const startY = 28 + i * 11
     const rise = (30 + i * 5) * f
     const amp  = (50 + i * 6) * f
     return {

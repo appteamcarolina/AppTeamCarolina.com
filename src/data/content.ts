@@ -255,6 +255,12 @@ export const legacyLeadershipCredits: LeadershipCredit[] = [
     sortYear: 2025,
   },
   {
+    name: 'Haley Shah',
+    role: 'CEO',
+    era: 'Spring 2026 - Present',
+    sortYear: 2026,
+  },
+  {
     name: 'Ben Chesser',
     role: 'CEO',
     era: 'Fall 2024 - Spring 2025',
@@ -325,6 +331,18 @@ export const legacyLeadershipCredits: LeadershipCredit[] = [
     role: 'CTO',
     era: 'Previous C-Suite',
     sortYear: 2020,
+  },
+  {
+    name: 'Kavya Sriram',
+    role: 'CTO',
+    era: 'Previous C-Suite',
+    sortYear: 2024,
+  },
+  {
+    name: 'Haley Shah',
+    role: 'COO',
+    era: 'Fall 2025 - Present',
+    sortYear: 2025,
   },
   {
     name: 'Ryder Klein',
@@ -434,133 +452,229 @@ export const legacyLeadershipCredits: LeadershipCredit[] = [
     era: 'Previous C-Suite',
     sortYear: 2020,
   },
+  {
+    name: 'Trey Anderson',
+    role: 'CDO',
+    era: 'Previous C-Suite',
+    sortYear: 2024,
+  },
 ]
 
 export const networkDestinations: NetworkDestination[] = [
   {
     company: 'Netflix',
-    logoSrc: 'https://cdn.simpleicons.org/netflix',
+    logoSrc: 'https://logo.clearbit.com/netflix.com?size=256',
     logoAlt: 'Netflix logo',
   },
   {
     company: 'Apple',
-    logoSrc: 'https://cdn.simpleicons.org/apple',
+    logoSrc: 'https://logo.clearbit.com/apple.com?size=256',
     logoAlt: 'Apple logo',
   },
   {
     company: 'Meta',
-    logoSrc: 'https://cdn.simpleicons.org/meta',
+    logoSrc: 'https://logo.clearbit.com/meta.com?size=256',
     logoAlt: 'Meta logo',
   },
   {
     company: 'Amazon',
-    logoSrc: 'https://cdn.simpleicons.org/amazon',
+    logoSrc: '/assets/company-logos/Amazon Logo.webp',
     logoAlt: 'Amazon logo',
   },
   {
     company: 'Google',
-    logoSrc: 'https://cdn.simpleicons.org/google',
+    logoSrc: 'https://logo.clearbit.com/google.com?size=256',
     logoAlt: 'Google logo',
   },
   {
     company: 'PayPal',
-    logoSrc: 'https://cdn.simpleicons.org/paypal',
+    logoSrc: 'https://logo.clearbit.com/paypal.com?size=256',
     logoAlt: 'PayPal logo',
   },
   {
-    company: 'Fidelity',
-    logoSrc: 'https://cdn.simpleicons.org/fidelityinvestments',
-    logoAlt: 'Fidelity logo',
-  },
-  {
-    company: 'SAS',
-    logoSrc: 'https://cdn.simpleicons.org/sas',
-    logoAlt: 'SAS logo',
-  },
-  {
     company: 'Wells Fargo',
-    logoSrc: 'https://cdn.simpleicons.org/wellsfargo',
+    logoSrc: 'https://logo.clearbit.com/wellsfargo.com?size=256',
     logoAlt: 'Wells Fargo logo',
   },
   {
     company: 'Datadog',
-    logoSrc: 'https://cdn.simpleicons.org/datadog',
+    logoSrc: 'https://logo.clearbit.com/datadoghq.com?size=256',
     logoAlt: 'Datadog logo',
   },
   {
     company: 'Capital One',
-    logoSrc: 'https://cdn.simpleicons.org/capitalone',
+    logoSrc: 'https://commons.wikimedia.org/wiki/Special:FilePath/Capital%20One%20logo.svg',
     logoAlt: 'Capital One logo',
   },
   {
     company: 'Microsoft',
-    logoSrc: 'https://cdn.simpleicons.org/microsoft',
+    logoSrc: 'https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft%20logo%20(2012).svg',
     logoAlt: 'Microsoft logo',
   },
   {
     company: 'Adobe',
-    logoSrc: 'https://cdn.simpleicons.org/adobe',
+    logoSrc: 'https://commons.wikimedia.org/wiki/Special:FilePath/Adobe%20Corporate%20logo.svg',
     logoAlt: 'Adobe logo',
   },
   {
     company: 'Pinterest',
-    logoSrc: 'https://cdn.simpleicons.org/pinterest',
+    logoSrc: 'https://logo.clearbit.com/pinterest.com?size=256',
     logoAlt: 'Pinterest logo',
   },
   {
     company: 'WillowTree',
-    logoSrc: 'https://cdn.simpleicons.org/willowtree',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=willowtreeapps.com&sz=256',
     logoAlt: 'WillowTree logo',
   },
   {
     company: 'Google DeepMind',
-    logoSrc: 'https://cdn.simpleicons.org/googledeepmind',
+    logoSrc: 'https://logo.clearbit.com/deepmind.google?size=256',
     logoAlt: 'Google DeepMind logo',
   },
   {
     company: 'Walmart',
-    logoSrc: 'https://cdn.simpleicons.org/walmart',
+    logoSrc: 'https://commons.wikimedia.org/wiki/Special:FilePath/New%20Walmart%20Logo.svg',
     logoAlt: 'Walmart logo',
   },
   {
     company: 'Visa',
-    logoSrc: 'https://cdn.simpleicons.org/visa',
+    logoSrc: 'https://logo.clearbit.com/visa.com?size=256',
     logoAlt: 'Visa logo',
   },
   {
     company: 'Plaid',
-    logoSrc: 'https://cdn.simpleicons.org/plaid',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=plaid.com&sz=256',
     logoAlt: 'Plaid logo',
   },
   {
     company: 'AWS',
-    logoSrc: 'https://cdn.simpleicons.org/amazonwebservices',
+    logoSrc: 'https://commons.wikimedia.org/wiki/Special:FilePath/Amazon%20Web%20Services%20Logo.svg',
     logoAlt: 'AWS logo',
   },
   {
     company: 'Bank of America',
-    logoSrc: 'https://cdn.simpleicons.org/bankofamerica',
+    logoSrc: 'https://logo.clearbit.com/bankofamerica.com?size=256',
     logoAlt: 'Bank of America logo',
   },
   {
     company: 'JPMorgan Chase',
-    logoSrc: 'https://cdn.simpleicons.org/jpmorganchase',
+    logoSrc: '/assets/company-logos/JP Morgan Logo.png',
     logoAlt: 'JPMorgan Chase logo',
   },
   {
     company: 'Goldman Sachs',
-    logoSrc: 'https://cdn.simpleicons.org/goldmansachs',
+    logoSrc: 'https://logo.clearbit.com/goldmansachs.com?size=256',
     logoAlt: 'Goldman Sachs logo',
   },
   {
-    company: 'CoStar',
-    logoSrc: 'https://cdn.simpleicons.org/costar',
-    logoAlt: 'CoStar logo',
+    company: 'Appian',
+    logoSrc: 'https://logo.clearbit.com/appian.com?size=256',
+    logoAlt: 'Appian logo',
   },
   {
-    company: 'Appian',
-    logoSrc: 'https://cdn.simpleicons.org/appian',
-    logoAlt: 'Appian logo',
+    company: 'DoorDash',
+    logoSrc: 'https://logo.clearbit.com/doordash.com?size=256',
+    logoAlt: 'DoorDash logo',
+  },
+  {
+    company: 'Bloomberg',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=bloomberg.com&sz=256',
+    logoAlt: 'Bloomberg logo',
+  },
+  {
+    company: 'NVIDIA',
+    logoSrc: 'https://logo.clearbit.com/nvidia.com?size=256',
+    logoAlt: 'NVIDIA logo',
+  },
+  {
+    company: 'Tesla',
+    logoSrc: 'https://logo.clearbit.com/tesla.com?size=256',
+    logoAlt: 'Tesla logo',
+  },
+  {
+    company: 'Salesforce',
+    logoSrc: '/assets/company-logos/Salesforce Logo.png',
+    logoAlt: 'Salesforce logo',
+  },
+  {
+    company: 'Cisco',
+    logoSrc: 'https://commons.wikimedia.org/wiki/Special:FilePath/Cisco%20logo-1000px.png',
+    logoAlt: 'Cisco logo',
+  },
+  {
+    company: 'Stripe',
+    logoSrc: 'https://logo.clearbit.com/stripe.com?size=256',
+    logoAlt: 'Stripe logo',
+  },
+  {
+    company: 'Boeing',
+    logoSrc: 'https://logo.clearbit.com/boeing.com?size=256',
+    logoAlt: 'Boeing logo',
+  },
+  {
+    company: 'Oracle',
+    logoSrc: '/assets/company-logos/Oracle Logo.png',
+    logoAlt: 'Oracle logo',
+  },
+  {
+    company: 'Intuit',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=intuit.com&sz=256',
+    logoAlt: 'Intuit logo',
+  },
+  {
+    company: 'Databricks',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=databricks.com&sz=256',
+    logoAlt: 'Databricks logo',
+  },
+  {
+    company: 'ZipRecruiter',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=ziprecruiter.com&sz=256',
+    logoAlt: 'ZipRecruiter logo',
+  },
+  {
+    company: 'Bandwidth',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=bandwidth.com&sz=256',
+    logoAlt: 'Bandwidth logo',
+  },
+  {
+    company: 'Red Hat',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=redhat.com&sz=256',
+    logoAlt: 'Red Hat logo',
+  },
+  {
+    company: 'Watershed',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=watershed.com&sz=256',
+    logoAlt: 'Watershed logo',
+  },
+  {
+    company: 'GitHub',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=github.com&sz=256',
+    logoAlt: 'GitHub logo',
+  },
+  {
+    company: 'Epic Games',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=epicgames.com&sz=256',
+    logoAlt: 'Epic Games logo',
+  },
+  {
+    company: 'Tanium',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=tanium.com&sz=256',
+    logoAlt: 'Tanium logo',
+  },
+  {
+    company: 'ServiceNow',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=servicenow.com&sz=256',
+    logoAlt: 'ServiceNow logo',
+  },
+  {
+    company: 'CoStar Group',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=costargroup.com&sz=256',
+    logoAlt: 'CoStar Group logo',
+  },
+  {
+    company: 'Pendo',
+    logoSrc: 'https://www.google.com/s2/favicons?domain=pendo.io&sz=256',
+    logoAlt: 'Pendo logo',
   },
 ]
 

@@ -11,8 +11,6 @@ import {
   Sparkles,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
 
 interface ApplyRoleCardProps {
   title: string
@@ -29,45 +27,49 @@ interface ApplyRoleCardProps {
 const roleDecor = {
   'iOS Bootcamp': {
     icon: Sparkles,
-    accent: 'from-[#6da6d6]/30 via-[#4b8cb8]/16 to-transparent',
-    tags: ['Learning', 'Starter Friendly', 'Weekly Build'],
+    tags: ['Learning', 'No experience necessary', 'Builder focused'],
   },
   'UI/UX Bootcamp': {
     icon: Layers3,
-    accent: 'from-[#87b8d9]/26 via-[#4b8cb8]/14 to-transparent',
-    tags: ['Design', 'Portfolio', 'Critique'],
+    tags: ['Learning', 'No experience necessary', 'Design focused'],
   },
   'iOS Developer': {
     icon: Code2,
-    accent: 'from-[#5f98ca]/28 via-[#2f5b79]/18 to-transparent',
-    tags: ['SwiftUI', 'Production', 'Shipping'],
+    tags: ['Production', 'Some experience expected', 'Builder focused'],
   },
   'UI/UX Designer': {
     icon: Layers3,
-    accent: 'from-[#7bb8dd]/24 via-[#3d6d90]/14 to-transparent',
-    tags: ['Figma', 'Research', 'Systems'],
+    tags: ['Production', 'Some experience expected', 'Design focused'],
   },
   'Product Manager': {
     icon: BriefcaseBusiness,
-    accent: 'from-[#7ca8c7]/24 via-[#315a75]/14 to-transparent',
-    tags: ['Strategy', 'Roadmaps', 'Teams'],
+    tags: ['Production', 'Some experience expected', 'Cross-functional'],
   },
   'Product Marketing Manager': {
     icon: Megaphone,
-    accent: 'from-[#8cb6d4]/22 via-[#365f7b]/14 to-transparent',
-    tags: ['Growth', 'Storytelling', 'Launch'],
+    tags: ['Production', 'Some experience expected', 'Storytelling focused'],
   },
   'Web Developer': {
     icon: Blocks,
-    accent: 'from-[#6d9bc0]/24 via-[#2d556f]/16 to-transparent',
-    tags: ['Frontend', 'React', 'Website'],
+    tags: ['Production', 'Some experience expected', 'Builder focused'],
   },
   'Backend Developer': {
     icon: ShieldCheck,
-    accent: 'from-[#7fb2d5]/22 via-[#325f7d]/16 to-transparent',
-    tags: ['APIs', 'Infra', 'Systems'],
+    tags: ['Production', 'Some experience expected', 'Builder focused'],
   },
 } as const
+
+function getTagTone(tag: string) {
+  if (tag === 'No experience necessary') return 'apply-role-card__tag apply-role-card__tag--starter'
+  if (tag === 'Some experience expected') return 'apply-role-card__tag apply-role-card__tag--expected'
+  if (tag === 'Design focused') return 'apply-role-card__tag apply-role-card__tag--design'
+  if (tag === 'Builder focused') return 'apply-role-card__tag apply-role-card__tag--builder'
+  if (tag === 'Storytelling focused') return 'apply-role-card__tag apply-role-card__tag--story'
+  if (tag === 'Cross-functional') return 'apply-role-card__tag apply-role-card__tag--cross'
+  if (tag === 'Learning') return 'apply-role-card__tag apply-role-card__tag--track'
+  if (tag === 'Production') return 'apply-role-card__tag apply-role-card__tag--track'
+  return 'apply-role-card__tag'
+}
 
 export const PlaceCard = ({
   title,
@@ -82,11 +84,11 @@ export const PlaceCard = ({
 }: ApplyRoleCardProps) => {
   const decor = roleDecor[title as keyof typeof roleDecor] ?? {
     icon: Rocket,
-    accent: 'from-[#6da6d6]/26 via-[#2f5b79]/16 to-transparent',
-    tags: ['App Team', 'Open Role', 'Apply'],
+    tags: ['Production', 'Some experience expected', 'Cross-functional'],
   }
 
   const Icon = decor.icon
+  const roleTags = [...new Set([...decor.tags, ...tags])]
 
   return (
     <motion.article
@@ -95,18 +97,18 @@ export const PlaceCard = ({
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{
-        y: -5,
-        transition: { type: 'spring', stiffness: 260, damping: 24 },
+        y: -2,
+        transition: { type: 'spring', stiffness: 260, damping: 26 },
       }}
       className={cn('apply-role-card group h-full', className)}
     >
       <div className="apply-role-card__inner">
-        <div className={cn('apply-role-card__hero', `bg-gradient-to-br ${decor.accent}`)}>
+        <div className="apply-role-card__hero">
           <div className="apply-role-card__hero-top">
-            {label ? <Badge variant="secondary">{label}</Badge> : <span />}
             <div className="apply-role-card__icon-shell">
               <Icon className="h-5 w-5" />
             </div>
+            {label ? <p className="apply-role-card__label">{label}</p> : null}
           </div>
 
           <div className="apply-role-card__title-wrap">
@@ -115,14 +117,10 @@ export const PlaceCard = ({
           </div>
 
           <div className="apply-role-card__tags">
-            {[...decor.tags, ...tags].map((tag, index) => (
-              <Badge
-                key={`${tag}-${index}`}
-                variant={index === 0 ? 'default' : 'outline'}
-                className="apply-role-card__tag"
-              >
+            {roleTags.map((tag, index) => (
+              <span key={`${tag}-${index}`} className={getTagTone(tag)}>
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
         </div>
@@ -131,7 +129,7 @@ export const PlaceCard = ({
           <p className="apply-role-card__description">{description}</p>
 
           <div className="apply-role-card__requirements">
-            <p className="apply-role-card__requirements-label">What we’re looking for</p>
+            <p className="apply-role-card__requirements-label">You'll work on</p>
             <ul className="apply-role-card__requirements-list">
               {requirements.slice(0, 3).map((requirement, index) => (
                 <li key={index}>{requirement}</li>
@@ -140,11 +138,9 @@ export const PlaceCard = ({
           </div>
 
           <div className="apply-role-card__footer">
-            <a href={applyUrl} target="_blank" rel="noopener noreferrer" className="w-full">
-              <Button className="apply-role-card__button w-full rounded-full">
+            <a href={applyUrl} target="_blank" rel="noopener noreferrer" className="button apply-role-card__button">
                 {applyLabel}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
             </a>
           </div>
         </div>

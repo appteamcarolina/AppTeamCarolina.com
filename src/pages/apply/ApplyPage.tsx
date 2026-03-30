@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { ApplyBackgroundPaths } from '@/components/ui/background-paths-variants'
 import { PlaceCard } from '@/components/ui/card-22'
 import { Search } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
 import Reveal from '@/components/site/Reveal'
 
 const filters = ['All', 'Learning', 'Production', 'Design', 'Developer'] as const
@@ -60,10 +59,10 @@ export default function ApplyPage() {
             className="apply-hero-copy"
           >
             <p className="landing-eyebrow">Apply · Fall Openings</p>
-            <h1 className="apply-hero-title">Find the role that fits how you want to build.</h1>
+            <h1 className="apply-hero-title">Find where you'd like to contribute.</h1>
             <p className="apply-hero-sub">
-              Whether you want to learn from scratch or join a production team shipping real work,
-              this is where you pick your lane. Every role is designed to help you grow with high standards and real momentum.
+              Open roles across Learning, Production, design, development, and product.
+              Start with the place that fits how you want to grow.
             </p>
           </motion.div>
         </div>
@@ -96,7 +95,7 @@ export default function ApplyPage() {
             </div>
 
             <div className="apply-results-meta">
-              <Badge variant="secondary">{filteredRoles.length} roles</Badge>
+              <span className="apply-results-meta__pill">{filteredRoles.length} roles</span>
             </div>
           </Reveal>
 

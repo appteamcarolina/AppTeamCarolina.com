@@ -50,8 +50,8 @@ export default function Landing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.75 }}
           >
-            App Team Carolina is a student-run iOS studio where people learn by designing,
-            building, and shipping products together.
+            App Team Carolina is a student-run nonprofit organization where students learn,
+            design, and build thoughtful products together.
           </motion.p>
 
           <motion.div
