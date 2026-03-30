@@ -1338,6 +1338,8 @@ mark {
   color: rgba(255,255,255,0.82);
   text-decoration: none;
   transition: color 0.18s ease;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 a.about-contact-value:hover { color: #4b8cb8; }
 
@@ -1660,11 +1662,17 @@ a.about-contact-value:hover { color: #4b8cb8; }
   color: rgba(255,255,255,0.6);
 }
 
+@media only screen and (max-width: 900px) {
+  .about-contact { grid-template-columns: 1fr; }
+}
+
 @media only screen and (max-width: 700px) {
   .about-stats { flex-wrap: wrap; gap: 0; }
   .about-stat { min-width: calc(50% - 1px); }
   .org-card { max-width: 100%; }
-  .about-contact { flex-direction: column; }
+  .about-contact { grid-template-columns: 1fr; }
+  .about-contact-card { padding: 18px 18px 16px; }
+  .about-contact-value { font-size: 14px; }
 }
 
 /* ===================== LANDING REDESIGN ===================== */
