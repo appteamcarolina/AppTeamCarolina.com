@@ -84,8 +84,11 @@ export default function ProductionPage() {
           <div className="row">
             {productionTracks.map((track, index) => (
               <Reveal key={track.title} className="col-md-6" delay={index * 0.05}>
-                <article className="track-card track-card--production prod-type-card">
-                  <div className="prod-type-card__top">
+                <article className="prod-process-card prod-process-card--type">
+                  <div className="prod-process-card__top">
+                    <div className="prod-process-card__icon-shell">
+                      <img src={track.icon} alt={track.iconAlt} className="prod-process-card__icon" />
+                    </div>
                     <Badge
                       variant="secondary"
                       className={track.title === 'Start-up Teams' ? 'badge--startup' : 'badge--production'}
@@ -93,18 +96,11 @@ export default function ProductionPage() {
                       {track.title === 'Start-up Teams' ? 'Start-up' : 'Production'}
                     </Badge>
                   </div>
-                  <div className="prod-type-card__body">
-                    <h4 className="track-card__title prod-type-card__title">
-                      <span className="prod-type-card__icon-shell">
-                        <img className="icon" src={track.icon} alt={track.iconAlt} />
-                      </span>
-                      {track.title}
-                    </h4>
-                    <p className="track-card__text prod-type-card__text">{track.text}</p>
-                  </div>
-                  <div className="prod-type-card__footer">
-                    <p className="prod-type-card__label">Teams recently built</p>
-                    <div className="track-card__app-icons prod-type-card__app-icons" aria-label={`${track.title} app examples`}>
+                  <h3 className="prod-process-card__title">{track.title}</h3>
+                  <p className="prod-process-card__text">{track.text}</p>
+                  <div className="track-card__footer">
+                    <p className="track-card__eyebrow">Teams recently built</p>
+                    <div className="track-card__app-icons" aria-label={`${track.title} app examples`}>
                       {productionTypeIcons[track.title as keyof typeof productionTypeIcons]?.map((app) => (
                         <span key={app.name} className="track-card__app-icon-shell" title={app.name}>
                           <img src={app.src} alt={app.alt} className="track-card__app-icon" />

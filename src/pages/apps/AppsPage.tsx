@@ -8,26 +8,20 @@ import { cn } from '@/lib/utils'
 
 const appPrinciples = [
   {
-    label: 'Intentional',
-    title: 'Products start with real needs',
-    text: 'Our projects are not fake portfolio prompts. They are rooted in accessibility, education, finance, and day-to-day needs people actually have.',
+    label: 'Purposeful',
+    title: 'The work starts with a real problem to solve.',
+    text: 'Our teams build around needs that actually exist, whether that means supporting accessibility, improving student life, or creating tools people can return to every day.',
   },
   {
     label: 'Collaborative',
-    title: 'Teams work across disciplines',
-    text: 'Design, development, product, and marketing all shape the outcome, which makes the work more thoughtful and more reflective of how good products are actually made.',
+    title: 'Products are shaped by more than one discipline.',
+    text: 'Design, development, product, and marketing all have a voice in the work, which leads to decisions that are more thoughtful, practical, and sustainable.',
   },
   {
-    label: 'Polished',
-    title: 'Quality matters as much as shipping',
-    text: 'We want what we ship to feel clear, useful, and well-crafted. Technically complete is not good enough.',
+    label: 'Thoughtful',
+    title: 'What gets built should feel useful and considered.',
+    text: 'We care about whether something is clear, usable, and worth putting in front of real people, not just whether it technically works.',
   },
-]
-
-const appStats = [
-  { value: 'Accessibility', label: 'education, and finance' },
-  { value: 'Student-run', label: 'cross-functional teams' },
-  { value: 'Real', label: 'users and product constraints' },
 ]
 
 const appMeta: Record<string, { devices: string[]; availability: string[] }> = {
@@ -60,19 +54,10 @@ export default function AppsPage() {
         title={<>Real products,<br />built with care.</>}
         description="From accessibility tools to personal finance and educational experiences, our teams build software for real people with real needs."
         background={<AppsBackgroundPaths />}
-      >
-        <Reveal delay={0.5} className="track-hero-stats" y={18}>
-          {appStats.map((item) => (
-            <div key={item.value} className="track-hero-stat">
-              <span className="track-hero-stat__value">{item.value}</span>
-              <span className="track-hero-stat__label">{item.label}</span>
-            </div>
-          ))}
-        </Reveal>
-      </PageHero>
+      />
 
       <div className="section">
-        <SectionHeading title="How We Think About Products." />
+        <SectionHeading title="What Guides The Work." />
         <div className="apps-principles-grid section-content">
           {appPrinciples.map((principle, index) => (
             <Reveal key={principle.title} className="apps-principle-card" delay={index * 0.06}>

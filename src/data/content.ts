@@ -143,7 +143,7 @@ export const productionTeams: ProductionTeam[] = [
     members: 17,
     semester: 'S25',
     apps: [
-      { name: 'Cupboard', icon: '' },
+      { name: 'Cupboard', icon: '/assets/icons/client.svg' },
       { name: 'Bubbly',   icon: '/assets/apps/bubbly/bubbly-icon.svg' },
     ],
     leads: [{ name: 'Jacob Brown' }, { name: 'Kavya Sriram' }],

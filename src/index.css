@@ -3982,7 +3982,7 @@ a.about-contact-value:hover { color: #4b8cb8; }
 .prod-type-card {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
   min-height: 100%;
   padding: 24px;
 }
@@ -3995,7 +3995,7 @@ a.about-contact-value:hover { color: #4b8cb8; }
 .prod-type-card__body {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   min-width: 0;
 }
 .prod-type-card__title {
@@ -4020,10 +4020,11 @@ a.about-contact-value:hover { color: #4b8cb8; }
 }
 .prod-type-card__footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   margin-top: auto;
+  width: 100%;
   padding-top: 16px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
@@ -4036,7 +4037,9 @@ a.about-contact-value:hover { color: #4b8cb8; }
   line-height: 1.2;
 }
 .prod-type-card__app-icons {
-  justify-content: flex-end;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
   flex-shrink: 0;
 }
 .track-card__top {
@@ -4046,17 +4049,24 @@ a.about-contact-value:hover { color: #4b8cb8; }
   gap: 12px;
   margin-bottom: 16px;
 }
+.track-card__footer {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .track-card__app-icons {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 .track-card__app-icon-shell {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  border-radius: 9px;
   border: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.03);
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
@@ -4067,8 +4077,8 @@ a.about-contact-value:hover { color: #4b8cb8; }
   background: rgba(255,255,255,0.05);
 }
 .track-card__app-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
   border-radius: 4px;
 }
