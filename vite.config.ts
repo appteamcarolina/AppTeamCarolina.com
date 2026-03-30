@@ -12,4 +12,7 @@ export default defineConfig({
     },
   },
   publicDir: 'public',
+  server: {
+    open: false,
+  },
 })
