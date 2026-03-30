@@ -243,33 +243,36 @@ body {
 
 .background-graphic-wave {
   background-image: url(/assets/icons/wave-graphic.svg);
-  height: 35vh;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 18px;
-  margin-bottom: 0;
+  background-position: center;
+  margin-top: 48px;
+  padding: 48px 0 56px;
+  overflow: hidden;
 }
 .gallery {
   padding: 0 var(--gutter);
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 20px;
 }
 .gallery img {
-  height: 200px;
-  border-radius: 200px;
-  border: 2px solid #c9e2f3;
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 226, 243, 0.7);
+  flex-shrink: 0;
 }
 @media only screen and (max-width: 1024px) {
-  .gallery img { height: 150px; }
+  .gallery { gap: 14px; }
+  .gallery img { height: 140px; width: 140px; }
 }
 @media only screen and (max-width: 700px) {
-  .gallery { gap: 10px; justify-content: center; }
-  .gallery img { height: 100px; border-radius: 80px; }
+  .gallery { gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .gallery img { height: 100px; width: 100px; }
 }
 
 /* ===================== MARK / LABELS ===================== */
@@ -2487,7 +2490,7 @@ a.about-contact-value:hover { color: #4b8cb8; }
 .home-cta__shell {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 10px 16px;
+  padding: 48px 56px;
   border-radius: 22px;
   border: 1px solid rgba(91, 138, 176, 0.24);
   background: rgba(17, 29, 37, 0.92);
