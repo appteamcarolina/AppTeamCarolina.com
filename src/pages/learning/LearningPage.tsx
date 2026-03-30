@@ -49,8 +49,8 @@ const curriculum = [
   },
   {
     number: '03',
-    title: "TAs who are here to help, not just grade.",
-    body: "Our TAs are App Team members who want to see you improve. Office hours, Slack, design reviews. They show up because they care.",
+    title: 'Support from people who want to see you improve.',
+    body: 'Our TAs are App Team members who care about helping you get unstuck, improve faster, and feel supported through office hours, Slack, and reviews.',
     accent: '#7a5cb8',
     tag: 'Support',
   },

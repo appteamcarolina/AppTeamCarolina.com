@@ -6,7 +6,6 @@ import ProductShowcase from '@/components/site/ProductShowcase'
 import Reveal from '@/components/site/Reveal'
 import SectionHeading from '@/components/site/SectionHeading'
 import { ProductionBackgroundPaths } from '@/components/ui/background-paths-variants'
-import { Testimonials } from '@/components/ui/unique-testimonial'
 import { Badge } from '@/components/ui/badge'
 
 const roles = [
@@ -37,27 +36,6 @@ const roles = [
   },
 ]
 
-const productionHighlights = [
-  {
-    icon: '/assets/icons/client.svg',
-    label: 'What stands out',
-    title: 'Work happens across roles, not in silos.',
-    body: 'Design, development, product, and marketing all shape the same work together, so people learn how stronger teams actually make decisions.',
-  },
-  {
-    icon: '/assets/icons/rocket.svg',
-    label: 'What stands out',
-    title: 'The work is tied to real needs.',
-    body: 'Some teams build with outside partners, while others develop original ideas around real user problems and constraints.',
-  },
-  {
-    icon: '/assets/icons/tools.svg',
-    label: 'What stands out',
-    title: 'There is room to stretch without doing it alone.',
-    body: 'Production gives people space to take on harder work, learn through mistakes, and improve with feedback from a team that is serious about the craft.',
-  },
-]
-
 const productionProcess = [
   {
     label: 'Discover',
@@ -79,29 +57,16 @@ const productionProcess = [
   },
 ]
 
-const productionTestimonials = [
-  {
-    id: 1,
-    quote: 'Production made me think beyond my own discipline. You start caring about the whole product, not just your own corner of it.',
-    author: 'Ryan Lee',
-    role: 'Former Client Team Product Manager',
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80',
-  },
-  {
-    id: 2,
-    quote: 'It was the first time I felt like I was building something that had to hold up for real users. That changed how I approached quality.',
-    author: 'Isabella Nguyen',
-    role: 'Former Startup Team Designer',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80',
-  },
-  {
-    id: 3,
-    quote: 'The best part was the standard. People here care about details, and that makes the work feel meaningful instead of performative.',
-    author: 'Noah Carter',
-    role: 'Former iOS Developer',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
-  },
-]
+const productionTypeIcons = {
+  'Client Teams': [
+    { src: '/assets/apps/bubbly/bubbly-icon.svg', alt: 'Bubbly icon', name: 'Bubbly' },
+    { src: '/assets/icons/client.svg', alt: 'PORCH placeholder icon', name: 'PORCH' },
+  ],
+  'Start-up Teams': [
+    { src: '/assets/apps/luminary/luminary.png', alt: 'Luminary icon', name: 'Luminary' },
+    { src: '/assets/apps/centible/centible.png', alt: 'Centible icon', name: 'Centible' },
+  ],
+}
 
 export default function ProductionPage() {
   return (
@@ -109,7 +74,7 @@ export default function ProductionPage() {
       <PageHero
         eyebrow="App Team Carolina · Track"
         title="Production Track."
-        description="Production is where ideas become real products. Our production members work in cross-functional teams with developers, designers, product managers, and marketers, shipping apps used by real people in the real world."
+        description="Production is where ideas become real products. Teams are cross-functional: developers, designers, product managers, and marketers all working toward one thing. The apps ship. Real people use them."
         background={<div className="absolute inset-0"><ProductionBackgroundPaths /></div>}
       />
 
@@ -119,40 +84,38 @@ export default function ProductionPage() {
           <div className="row">
             {productionTracks.map((track, index) => (
               <Reveal key={track.title} className="col-md-6" delay={index * 0.05}>
-                <article className="track-card track-card--production">
-                  <div className="track-card__top">
-                    <Badge variant="secondary">Production</Badge>
-                    <span className="track-card__eyebrow">Real collaboration</span>
+                <article className="track-card track-card--production prod-type-card">
+                  <div className="prod-type-card__top">
+                    <Badge
+                      variant="secondary"
+                      className={track.title === 'Start-up Teams' ? 'badge--startup' : 'badge--production'}
+                    >
+                      {track.title === 'Start-up Teams' ? 'Start-up' : 'Production'}
+                    </Badge>
                   </div>
-                  <div className="track-card__body">
-                    <h4 className="track-card__title">
-                      <img className="icon" src={track.icon} alt={track.iconAlt} />
+                  <div className="prod-type-card__body">
+                    <h4 className="track-card__title prod-type-card__title">
+                      <span className="prod-type-card__icon-shell">
+                        <img className="icon" src={track.icon} alt={track.iconAlt} />
+                      </span>
                       {track.title}
                     </h4>
-                    <p className="track-card__text">{track.text}</p>
+                    <p className="track-card__text prod-type-card__text">{track.text}</p>
+                  </div>
+                  <div className="prod-type-card__footer">
+                    <p className="prod-type-card__label">Teams recently built</p>
+                    <div className="track-card__app-icons prod-type-card__app-icons" aria-label={`${track.title} app examples`}>
+                      {productionTypeIcons[track.title as keyof typeof productionTypeIcons]?.map((app) => (
+                        <span key={app.name} className="track-card__app-icon-shell" title={app.name}>
+                          <img src={app.src} alt={app.alt} className="track-card__app-icon" />
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </article>
               </Reveal>
             ))}
           </div>
-        </div>
-      </div>
-
-      <div className="section">
-        <SectionHeading title="Why Production Matters." />
-        <div className="section-content prod-highlights-grid">
-          {productionHighlights.map((item, index) => (
-            <Reveal key={item.title} className="prod-highlight-card" delay={index * 0.06}>
-              <div className="prod-highlight-card__top">
-                <div className="prod-highlight-card__icon-shell">
-                  <img src={item.icon} alt={item.label} className="prod-highlight-card__icon" />
-                </div>
-                <p className="prod-highlight-card__label">{item.label}</p>
-              </div>
-              <h3 className="prod-highlight-card__title">{item.title}</h3>
-              <p className="prod-highlight-card__text">{item.body}</p>
-            </Reveal>
-          ))}
         </div>
       </div>
 
@@ -203,19 +166,10 @@ export default function ProductionPage() {
         />
       </div>
 
-      <div className="section">
-        <SectionHeading title="What Members Say." />
-        <Reveal className="section-content">
-          <div className="track-testimonial-shell">
-            <Testimonials items={productionTestimonials} />
-          </div>
-        </Reveal>
-      </div>
-
       <PageCta
         eyebrow="Interested in Production?"
         title="A place to build with real stakes, real teammates, and real users in mind."
-        description="Production is for people who want to work closely with others, contribute to serious product work, and keep raising their standards through projects that have to hold up outside the classroom."
+        description="Production is for people who want to work closely with others, do serious product work, and keep raising their standards through projects that have to hold up in the real world."
         to="/apply"
         actionLabel="Explore Open Roles"
         secondaryTo="/apps"

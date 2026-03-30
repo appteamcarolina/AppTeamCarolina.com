@@ -84,7 +84,7 @@ export default function Footer() {
           <div className="footer-love-note">
             <p>Made with ♥ at UNC Chapel Hill</p>
             <div className="footer-love-note__tooltip" role="tooltip">
-              Designed & developed by Morgan Roberts & Will Wang.
+              Website designed & developed by Morgan Roberts & Will Wang.
             </div>
           </div>
         </div>

@@ -668,7 +668,7 @@ export const pillars: Pillar[] = [
     eyebrow: 'Education',
     imageSrc: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Students collaborating around a laptop',
-    text: "We teach the full iOS product process, from product thinking and interface design to implementation. The goal is to give students practical foundations, real feedback, and the repetition that helps them contribute with confidence.",
+    text: "We teach the full iOS product process, from product thinking and interface design to implementation. The goal is practical foundations, real feedback, and enough repetition that members can contribute with confidence.",
   },
   {
     icon: '/assets/icons/bezier.svg',
@@ -677,7 +677,7 @@ export const pillars: Pillar[] = [
     eyebrow: 'Craft',
     imageSrc: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Designer sketching product ideas on a glass wall',
-    text: "We treat design as a core part of building good products, not something added at the end. Members learn to care about clarity, usability, and visual polish so the work feels intuitive, intentional, and ready for real users.",
+    text: "We treat design as a core part of building good products, not something bolted on at the end. Members learn to care about clarity, usability, and visual polish so the work feels intuitive and intentional.",
     cardClass: 'mobile-card-margin-1',
   },
   {
@@ -687,7 +687,7 @@ export const pillars: Pillar[] = [
     eyebrow: 'Execution',
     imageSrc: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Developer working at a laptop with code on screen',
-    text: "We give students the chance to improve by building in teams, shipping real work, and seeing how strong products actually come together. That means writing better code, collaborating well, iterating quickly, and working toward a standard that feels closer to industry than to a classroom assignment.",
+    text: "We give members the chance to improve by building in teams, shipping real work, and seeing how strong products come together. That means better code, good collaboration, fast iteration, and holding a standard that feels closer to industry than a classroom.",
     cardClass: 'mobile-card-margin-2',
   },
 ]
@@ -709,7 +709,7 @@ export const learningTracks: Track[] = [
     icon: '/assets/icons/books.svg',
     iconAlt: 'Books Icon',
     title: 'iOS Bootcamp',
-    text: "Learn to build real iOS apps from scratch. You will cover Swift fundamentals, SwiftUI layouts, working with APIs, and the full Xcode development workflow. No interview required, just a curiosity for building things and a willingness to show up.",
+    text: "Learn to build real iOS apps from scratch. You'll cover Swift fundamentals, SwiftUI layouts, working with APIs, and the full Xcode development workflow. No interview needed, just curiosity and a willingness to show up.",
   },
   {
     label: 'Learning',
@@ -718,7 +718,7 @@ export const learningTracks: Track[] = [
     icon: '/assets/icons/eyedropper.svg',
     iconAlt: 'Eyedropper Icon',
     title: 'UI/UX Bootcamp',
-    text: "Learn the craft of designing products people actually want to use. You will work in Figma, study visual hierarchy and typography, build wireframes and prototypes, and develop the eye for detail that separates good design from great. No interview required.",
+    text: "Learn the craft of designing products people actually want to use. You'll work in Figma, study visual hierarchy and typography, build wireframes and prototypes, and develop the eye for detail that separates good design from great. No interview needed.",
     cardClass: 'mobile-card-margin-1',
   },
   {
@@ -728,7 +728,7 @@ export const learningTracks: Track[] = [
     icon: '/assets/icons/blocks.svg',
     iconAlt: 'Blocks Icon',
     title: 'iOS Apprenticeship',
-    text: "Go deeper. You will tackle advanced Swift patterns, app architecture, performance, and shipping real features on a project that matters. Open to members who have completed the bootcamp or bring some prior iOS experience.",
+    text: "Go deeper. You'll tackle advanced Swift patterns, app architecture, performance, and shipping real features on a project that matters. Open to members who've completed the bootcamp or have some iOS background.",
     cardClass: 'mobile-card-margin-2',
   },
   {
@@ -738,7 +738,7 @@ export const learningTracks: Track[] = [
     icon: '/assets/icons/blocks.svg',
     iconAlt: 'Blocks Icon',
     title: 'UI/UX Apprenticeship',
-    text: "Take your design thinking further. You will explore user research, interaction design systems, critique, and the full process of shipping a polished product. Open to members who have completed the bootcamp or have some design background.",
+    text: "Take your design thinking further. You'll explore user research, interaction design systems, critique, and the full process of shipping a polished product. Open to members who've completed the bootcamp or have some design background.",
     cardClass: 'mobile-card-margin-3',
   },
 ]
@@ -770,7 +770,7 @@ export const apps: App[] = [
     iconAlt: 'Luminary Icon',
     name: 'Luminary',
     started: 'Started Spring 2023',
-    description: "This app aims to make navigating UNC's campus more accessible for those with mobility limitations. It allows users to find accessible routes curated to their specific needs and report accessibility concerns and barriers, which are displayed in a real-time feed.",
+    description: "Luminary makes navigating UNC's campus more accessible for those with mobility limitations. Users can find accessible routes tailored to their needs and report barriers, which show up in a real-time feed.",
   },
   {
     coverSrc: '/assets/apps/centible/centible-cover.svg',
@@ -779,7 +779,7 @@ export const apps: App[] = [
     iconAlt: 'Centible Icon',
     name: 'Centible',
     started: 'Started Spring 2022',
-    description: "This app helps college students manage their finances and build toward a healthy financial lifestyle by syncing with their banks to track spending and allowing the user to sort their transactions into custom categories.",
+    description: "Centible helps college students manage their finances by syncing with their bank to track spending and sort transactions into custom categories.",
     link: 'https://centible.app/',
     linkLabel: 'Try it out!',
     cardClass: 'mobile-card-margin-1',
@@ -791,7 +791,7 @@ export const apps: App[] = [
     iconAlt: 'Bubbly Icon',
     name: 'Bubbly',
     started: 'Started Fall 2021',
-    description: "This is an iPad game consisting of targeted brain training exercises to help improve vision in children and adolescents with Cortical Visual Impairment (CVI), a disorder that is caused by damage to the parts of the brain that process vision, which disrupts the brain's communication with the eyes.",
+    description: "Bubbly is an iPad game with targeted brain training exercises to help improve vision in kids and teens with Cortical Visual Impairment (CVI), a condition caused by brain damage that disrupts how visual information is processed.",
     link: '/bubbly',
     linkLabel: 'Tell me more!',
     cardClass: 'mobile-card-margin-2 third',
@@ -830,7 +830,7 @@ export const roles: Role[] = [
     title: 'iOS Developer',
     subtitle: 'Production Team',
     label: 'Production',
-    description: "As an iOS Developer, you'll be the driving force behind developing extraordinary user experiences with Swift and SwiftUI. You will work on a production team for one of our innovative applications.",
+    description: "As an iOS Developer, you'll be the driving force behind developing extraordinary user experiences with Swift and SwiftUI. You'll work on a production team building one of our apps.",
     requirements: [
       'Strong, demonstrated knowledge of iOS development and concepts',
       'Passion for all things iOS',
@@ -859,7 +859,7 @@ export const roles: Role[] = [
     title: 'Product Manager',
     subtitle: 'Production Team',
     label: 'Production',
-    description: "As a Product Manager, you'll drive product development, launch strategies, and feature prioritization for our innovative apps. You will work in either a client-focused consulting team or a startup environment, gaining product management experience firsthand.",
+    description: "As a Product Manager, you'll drive product development, launch strategies, and feature prioritization for our innovative apps. You'll work in either a client team or a startup environment, getting real PM experience firsthand.",
     requirements: [
       'Strong, demonstrated knowledge of product management',
       'Demonstrated passion for technology',
@@ -901,7 +901,7 @@ export const roles: Role[] = [
     title: 'Backend Developer',
     subtitle: 'Production Team',
     label: 'Production',
-    description: "As a Backend Developer, you will create the backend solutions that power our frontend applications and create amazing experiences for our users. You will work together with a team of developers, designers, product managers, and marketers to bring ideas to life.",
+    description: "As a Backend Developer, you'll build the backend that powers our apps and makes great experiences possible. You'll work alongside developers, designers, PMs, and marketers to bring products to life.",
     requirements: [
       'Experience building backend systems, like data storage and authentication that are accessed through APIs.',
       'Demonstrated passion for technology',

@@ -258,7 +258,7 @@ export default function AboutPage() {
         <div className="about-founders-intro">
           <p>
             App Team exists to give people real experience across design, development,
-            and product work in a community that is collaborative, ambitious, and
+            and product work in a community that's collaborative, ambitious, and
             serious about doing things well.
           </p>
         </div>

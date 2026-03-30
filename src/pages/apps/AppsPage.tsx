@@ -20,7 +20,7 @@ const appPrinciples = [
   {
     label: 'Polished',
     title: 'Quality matters as much as shipping',
-    text: 'We want the things we ship to feel clear, useful, and well-crafted, not just technically complete.',
+    text: 'We want what we ship to feel clear, useful, and well-crafted. Technically complete is not good enough.',
   },
 ]
 
