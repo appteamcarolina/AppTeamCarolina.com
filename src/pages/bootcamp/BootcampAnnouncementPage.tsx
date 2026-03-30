@@ -29,7 +29,7 @@ export default function BootcampAnnouncementPage() {
             public: our iOS and UI/UX Bootcamps.
           </b>{' '}
           These bootcamps will replace our previous Academy teams and will be
-          open to all UNC students who satisfy the entry requirements – no
+          open to all UNC students who satisfy the entry requirements, with no
           interviews needed. We'll now be able to provide high-quality education
           to more people than ever before, and participants will have an
           opportunity to receive a well-rounded introduction to design or

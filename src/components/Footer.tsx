@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer id="footer">
       <div className="footer-skyline-bg" aria-hidden="true">
-        <img src="/assets/unc-skyline.png" alt="" className="footer-skyline-img" />
+        <img src="/assets/brand/unc-skyline.png" alt="" className="footer-skyline-img" />
       </div>
 
       <div className="footer-content-shell">

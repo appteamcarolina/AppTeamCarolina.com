@@ -9,7 +9,7 @@
 // Styles are loaded by BubblyLayout, which wraps all bubbly routes
 
 const html = `
-  <a class="docs-back" href="/bubbly"><img src="/assets/bubbly-assets/logo.png"></img></a>
+  <a class="docs-back" href="/bubbly"><img src="/assets/apps/bubbly/logo.png"></img></a>
 
   <div class="docs-container">
     <h1  id="title">Terms and Conditions</h1>

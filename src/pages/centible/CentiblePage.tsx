@@ -12,7 +12,7 @@ import { motion } from 'framer-motion'
 export default function CentiblePage() {
   return (
     <div style={{
-      backgroundImage: 'url(/assets/centible-background.png)',
+      backgroundImage: 'url(/assets/apps/centible/centible-background.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       minHeight: '100vh',
@@ -52,7 +52,7 @@ export default function CentiblePage() {
           transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
         >
           <img
-            src="/assets/centible-screens.png"
+            src="/assets/apps/centible/centible-screens.png"
             alt="Centible app screens"
             style={{ maxWidth: '400px', width: '100%' }}
           />

@@ -96,7 +96,7 @@ export default function ContentTooltip({
           whileTap={{ y: 0, scale: 0.97 }}
           transition={{ type: 'spring', stiffness: 320, damping: 22 }}
         >
-          <img src="/assets/logo.svg" alt="App Team Carolina" className="footer-logo" />
+          <img src="/assets/brand/logo.svg" alt="App Team Carolina" className="footer-logo" />
         </motion.button>
 
         <div className="footer-credits-tooltip" role="tooltip">
@@ -190,7 +190,7 @@ export default function ContentTooltip({
                       </div>
                       <div className="footer-credits-card__role-tags">
                         {credit.roles.map((role) => (
-                          <span key={`${credit.name}-${role}`} className="footer-credits-card__role-tag">{role}</span>
+                          <span key={`${credit.name}-${role}`} className="footer-credits-card__role-tag">{role.toUpperCase()}</span>
                         ))}
                       </div>
                     </motion.article>

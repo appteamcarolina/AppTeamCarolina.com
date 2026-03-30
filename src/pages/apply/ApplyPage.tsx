@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react'
 import { roles } from '../../data/content'
 import Layout from '../../components/Layout'
-import { motion } from 'framer-motion'
 import { ApplyBackgroundPaths } from '@/components/ui/background-paths-variants'
 import { PlaceCard } from '@/components/ui/card-22'
 import { Search } from 'lucide-react'
 import Reveal from '@/components/site/Reveal'
+import PageHero from '@/components/site/PageHero'
 
 const filters = ['All', 'Learning', 'Production', 'Design', 'Developer'] as const
+const applicationsOpen = false
 
 function getRoleTags(role: (typeof roles)[number]) {
   const tags: string[] = []
@@ -46,38 +47,30 @@ export default function ApplyPage() {
 
   return (
     <Layout>
-      <section className="apply-hero">
-        <div className="apply-hero-paths">
-          <ApplyBackgroundPaths />
-        </div>
-        <div className="apply-hero-glow" />
-        <div className="apply-hero-inner">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-            className="apply-hero-copy"
-          >
-            <p className="landing-eyebrow">Apply · Fall Openings</p>
-            <h1 className="apply-hero-title">Find where you'd like to contribute.</h1>
-            <p className="apply-hero-sub">
-              Open roles across Learning, Production, design, development, and product.
-              Start with the place that fits how you want to grow.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Apply · Seasonal Update"
+        title="Fall applications are now closed."
+        description="We are not accepting Fall applications right now, but we will be looking for thoughtful builders, designers, and collaborators again in the Spring. Feel free to read through the role descriptions to see what might be a good fit or catch your eye."
+        background={<div className="absolute inset-0"><ApplyBackgroundPaths /></div>}
+        className="apply-page-hero relative overflow-hidden"
+        contentStyle={{ padding: 'calc(var(--section-v) + 56px) var(--gutter) calc(var(--section-v) - 6px)' }}
+      >
+        <Reveal delay={0.5} className="apply-season-note" y={18}>
+          <div className="apply-season-note__pill">Applications reopen in the Spring</div>
+        </Reveal>
+      </PageHero>
 
       <div className="section">
         <div className="section-content">
           <Reveal className="apply-controls">
-            <div className="apply-search">
+            <div className="apply-search apply-search--disabled" aria-disabled="true">
               <Search className="apply-search__icon h-4 w-4" />
               <input
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Search roles, skills, or teams"
                 className="apply-search__input"
+                disabled={!applicationsOpen}
               />
             </div>
 
@@ -88,6 +81,7 @@ export default function ApplyPage() {
                   type="button"
                   onClick={() => setActiveFilter(filter)}
                   className={activeFilter === filter ? 'apply-filter-chip apply-filter-chip--active' : 'apply-filter-chip'}
+                  disabled={!applicationsOpen}
                 >
                   {filter}
                 </button>
@@ -110,6 +104,7 @@ export default function ApplyPage() {
                   requirements={role.requirements}
                   applyUrl={role.applyUrl}
                   applyLabel={role.applyLabel}
+                  applicationsOpen={applicationsOpen}
                   tags={getRoleTags(role)}
                 />
               </Reveal>

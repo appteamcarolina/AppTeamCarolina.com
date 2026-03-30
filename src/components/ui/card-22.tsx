@@ -18,6 +18,7 @@ interface ApplyRoleCardProps {
   requirements: string[]
   applyUrl: string
   applyLabel: string
+  applicationsOpen?: boolean
   label?: string
   subtitle?: string
   tags?: string[]
@@ -77,6 +78,7 @@ export const PlaceCard = ({
   requirements,
   applyUrl,
   applyLabel,
+  applicationsOpen = true,
   label,
   subtitle,
   tags = [],
@@ -138,10 +140,16 @@ export const PlaceCard = ({
           </div>
 
           <div className="apply-role-card__footer">
-            <a href={applyUrl} target="_blank" rel="noopener noreferrer" className="button apply-role-card__button">
-                {applyLabel}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            {applicationsOpen ? (
+              <a href={applyUrl} target="_blank" rel="noopener noreferrer" className="button apply-role-card__button">
+                  {applyLabel}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            ) : (
+              <button type="button" className="button apply-role-card__button apply-role-card__button--disabled" disabled>
+                Applications Closed
+              </button>
+            )}
           </div>
         </div>
       </div>

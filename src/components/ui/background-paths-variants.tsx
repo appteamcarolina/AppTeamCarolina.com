@@ -7,7 +7,7 @@ const ANIM = {
   transition: (id: number) => ({ duration: 20 + (id % 7) * 3, repeat: Infinity, ease: 'linear' as const }),
 }
 
-// ── About: top-right → bottom-left (mirror of home) ───────────────────────────
+// About: top-right to bottom-left, mirror of home
 function AboutFloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 24 }, (_, i) => ({
     id: i,
@@ -30,7 +30,7 @@ export function AboutBackgroundPaths() {
   return <div className="absolute inset-0 overflow-hidden pointer-events-none"><AboutFloatingPaths position={1} /><AboutFloatingPaths position={-1} /></div>
 }
 
-// ── Learning: horizontal sine waves that travel fully off both edges ──────────
+// Learning: horizontal sine waves that travel fully off both edges
 function LearningFloatingPaths({ flip, offset = 0 }: { flip?: boolean; offset?: number }) {
   const paths = Array.from({ length: 16 }, (_, i) => {
     const cy = 28 + offset + i * 10
@@ -63,7 +63,7 @@ export function LearningBackgroundPaths() {
   )
 }
 
-// ── Production: elegant flowing S-curves, gently rising left→right ────────────
+// Production: elegant flowing S-curves, gently rising left to right
 function ProductionFloatingPaths({ invert }: { invert?: boolean }) {
   const paths = Array.from({ length: 16 }, (_, i) => {
     const f = invert ? -1 : 1
@@ -92,7 +92,7 @@ export function ProductionBackgroundPaths() {
   return <div className="absolute inset-0 overflow-hidden pointer-events-none"><ProductionFloatingPaths /><ProductionFloatingPaths invert /></div>
 }
 
-// ── Apps: grass-in-wind — rise from bottom, fan upward and right ──────────────
+// Apps: grass-in-wind, rising from bottom and fanning upward and right
 function AppsFloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({
     id: i,
@@ -115,7 +115,7 @@ export function AppsBackgroundPaths() {
   return <div className="absolute inset-0 overflow-hidden pointer-events-none"><AppsFloatingPaths position={1} /><AppsFloatingPaths position={-1} /></div>
 }
 
-// ── Apply: centered upward sweep with softer opposing cross-currents ──────────
+// Apply: centered upward sweep with softer opposing cross-currents
 function ApplyFloatingPaths({ invert }: { invert?: boolean }) {
   const paths = Array.from({ length: 22 }, (_, i) => {
     const f = invert ? -1 : 1

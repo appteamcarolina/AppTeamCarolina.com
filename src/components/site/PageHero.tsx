@@ -8,6 +8,7 @@ type PageHeroProps = {
   background?: ReactNode
   children?: ReactNode
   className?: string
+  contentStyle?: React.CSSProperties
 }
 
 // Shared hero shell for top-of-page intros so each route gets the same elegant entry motion.
@@ -18,11 +19,18 @@ export default function PageHero({
   background,
   children,
   className = 'about-page-hero relative overflow-hidden',
+  contentStyle,
 }: PageHeroProps) {
   return (
     <div className={className}>
       {background}
-      <div className="relative z-10" style={{ padding: 'calc(var(--section-v) + 64px) var(--gutter) var(--section-v)' }}>
+      <div
+        className="relative z-10"
+        style={{
+          padding: 'calc(var(--section-v) + 64px) var(--gutter) var(--section-v)',
+          ...contentStyle,
+        }}
+      >
         <motion.p
           className="landing-eyebrow"
           initial={{ opacity: 0, y: 20 }}

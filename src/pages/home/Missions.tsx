@@ -14,7 +14,7 @@ import { NavLink } from 'react-router-dom'
 
 const homePillars = [
   {
-    icon: '/assets/idea.svg',
+    icon: '/assets/icons/idea.svg',
     iconAlt: 'Lightbulb icon',
     eyebrow: 'Education',
     title: 'Learn',
@@ -23,7 +23,7 @@ const homePillars = [
     className: 'home-offer-block--top',
   },
   {
-    icon: '/assets/bezier.svg',
+    icon: '/assets/icons/bezier.svg',
     iconAlt: 'Bezier icon',
     eyebrow: 'Craft',
     title: 'Design',
@@ -32,7 +32,7 @@ const homePillars = [
     className: 'home-offer-block--mid',
   },
   {
-    icon: '/assets/tools.svg',
+    icon: '/assets/icons/tools.svg',
     iconAlt: 'Tools icon',
     eyebrow: 'Execution',
     title: 'Develop',

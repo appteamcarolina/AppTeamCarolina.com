@@ -42,7 +42,7 @@ const fragmentShaderSource = `
     vec2 uv = gl_FragCoord.xy / resolution;
     uv.y = 1.0 - uv.y;
 
-    // Background gradient — dark navy
+    // Background gradient, dark navy
     vec4 bgColor1 = vec4(0.04, 0.08, 0.11, 1.0);
     vec4 bgColor2 = vec4(0.06, 0.12, 0.18, 1.0);
     vec4 bg = mix(bgColor1, bgColor2, uv.y);
@@ -63,7 +63,7 @@ const fragmentShaderSource = `
                 + pow(1.0 - line2, 14.0) * 0.4
                 + pow(1.0 - line3, 16.0) * 0.3;
 
-    // Blue accent color — #4b8cb8
+    // Blue accent color, #4b8cb8
     vec4 lineColor = vec4(0.18, 0.42, 0.62, 1.0);
 
     // Subtle glow tint

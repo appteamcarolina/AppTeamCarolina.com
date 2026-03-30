@@ -70,10 +70,10 @@ export default function Landing() {
         </div>
 
         <div className="layered-graphic" aria-hidden="true">
-          <img className="layer image1" src="/assets/layer1.svg" alt="" />
-          <img className="layer image2" src="/assets/layer2.svg" alt="" />
-          <img className="layer image3" src="/assets/layer3.svg" alt="" />
-          <img className="layer image4" src="/assets/layer4.svg" alt="" />
+          <img className="layer image1" src="/assets/icons/layer1.svg" alt="" />
+          <img className="layer image2" src="/assets/icons/layer2.svg" alt="" />
+          <img className="layer image3" src="/assets/icons/layer3.svg" alt="" />
+          <img className="layer image4" src="/assets/icons/layer4.svg" alt="" />
         </div>
       </div>
     </section>

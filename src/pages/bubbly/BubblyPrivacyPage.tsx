@@ -9,7 +9,7 @@
 // Styles are loaded by BubblyLayout, which wraps all bubbly routes
 
 const html = `
-  <a class="docs-back" href="/bubbly"><img src="/assets/bubbly-assets/logo.png"></img></a>
+  <a class="docs-back" href="/bubbly"><img src="/assets/apps/bubbly/logo.png"></img></a>
 
   <div class="docs-container">
     <h1 >Privacy Notice</h1>
@@ -574,7 +574,7 @@ const html = `
       future belonging to website visitors, users, and other consumers.
     </p>
     <p><b>Your rights with respect to your personal data</b></p>
-    <p><u>Right to request deletion of the data — Request to delete</u></p>
+    <p><u>Right to request deletion of the data - Request to delete</u></p>
     <p>
       You can ask for the deletion of your personal information. If you ask us
       to delete your personal information, we will respect your request and
@@ -584,7 +584,7 @@ const html = `
       from a legal obligation, or any processing that may be required to protect
       against illegal activities.
     </p>
-    <p><u>Right to be informed — Request to know</u></p>
+    <p><u>Right to be informed - Request to know</u></p>
     <p>Depending on the circumstances, you have a right to know:</p>
     <ul>
       <li>whether we collect and use your personal information;</li>

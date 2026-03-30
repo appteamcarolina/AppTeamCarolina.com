@@ -65,7 +65,7 @@ export default function Navbar() {
         className="flex w-full items-center justify-between"
       >
         <NavLink to="/" onClick={() => setOpen(false)} className="nav-logo-link flex items-center shrink-0">
-          <img src="/assets/logo.svg" alt="App Team Carolina" className="h-11 w-11" />
+          <img src="/assets/brand/logo.svg" alt="App Team Carolina" className="h-11 w-11" />
         </NavLink>
 
         <div className="hidden items-center gap-1.5 md:flex">

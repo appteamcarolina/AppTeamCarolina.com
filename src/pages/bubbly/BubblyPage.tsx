@@ -3,9 +3,9 @@
  *
  * Home page for the Bubbly micro-site (/bubbly).
  * Split into three sections:
- *   1. Hero — app logo, tagline, App Store download button, and video demo CTA
- *   2. Demo  — embedded video walkthrough of the app
- *   3. Footer — copyright and links to privacy policy / terms of service
+ *   1. Hero - app logo, tagline, App Store download button, and video demo CTA
+ *   2. Demo - embedded video walkthrough of the app
+ *   3. Footer - copyright and links to privacy policy / terms of service
  */
 
 import { Link } from 'react-router-dom'
@@ -14,7 +14,7 @@ import { motion } from 'framer-motion'
 export default function BubblyPage() {
   return (
     <>
-      {/* ── Hero ── */}
+      {/* Hero */}
       <div className="bubbly-flex-container">
         {/* Left pane: branding and CTAs */}
         <motion.div
@@ -27,7 +27,7 @@ export default function BubblyPage() {
             <div>
               <img
                 className="bubbly-logo"
-                src="/assets/bubbly-assets/logo-3x.png"
+                src="/assets/apps/bubbly/logo-3x.png"
                 alt="Bubbly Logo"
               />
               <p className="bubbly-caption">
@@ -42,10 +42,10 @@ export default function BubblyPage() {
                     className="bubbly-button"
                     id="download_button"
                   >
-                    <img src="/assets/bubbly-assets/appstoredownload.svg" alt="Download on App Store" />
+                    <img src="/assets/apps/bubbly/appstoredownload.svg" alt="Download on App Store" />
                   </a>
                   <a href="#demo" className="bubbly-button" id="video_button">
-                    <img src="/assets/bubbly-assets/playvideo.png" alt="Watch Video Demo" />
+                    <img src="/assets/apps/bubbly/playvideo.png" alt="Watch Video Demo" />
                   </a>
                 </div>
               </div>
@@ -64,7 +64,7 @@ export default function BubblyPage() {
             <div>
               <img
                 className="bubbly-mockup"
-                src="/assets/bubbly-assets/mockup.png"
+                src="/assets/apps/bubbly/mockup.png"
                 alt="Bubbly App Mockup"
               />
             </div>
@@ -83,7 +83,7 @@ export default function BubblyPage() {
       >
         <h1 className="bubbly-title">Video Demo</h1>
         <video controls>
-          <source src="/assets/bubbly-assets/bubbly-demo.mov" type="video/mp4" />
+          <source src="/assets/apps/bubbly/bubbly-demo.mov" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </motion.div>

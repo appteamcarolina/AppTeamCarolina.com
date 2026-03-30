@@ -22,6 +22,8 @@ export interface Track {
   iconAlt: string
   title: string
   text: string
+  eyebrow?: string
+  badgeLabel?: string
   cardClass?: string
 }
 
@@ -142,7 +144,7 @@ export const productionTeams: ProductionTeam[] = [
     semester: 'S25',
     apps: [
       { name: 'Cupboard', icon: '' },
-      { name: 'Bubbly',   icon: '/assets/bubbly-icon.svg' },
+      { name: 'Bubbly',   icon: '/assets/apps/bubbly/bubbly-icon.svg' },
     ],
     leads: [{ name: 'Jacob Brown' }, { name: 'Kavya Sriram' }],
   },
@@ -152,7 +154,7 @@ export const productionTeams: ProductionTeam[] = [
     members: 17,
     semester: 'F25',
     apps: [
-      { name: 'PORCH', icon: '/assets/luminary.png' },
+      { name: 'PORCH', icon: '/assets/apps/luminary/luminary.png' },
     ],
     leads: [{ name: 'Anisha Kundu' }, { name: 'Ashley Hinostroza' }],
   },
@@ -162,7 +164,7 @@ export const productionTeams: ProductionTeam[] = [
     members: 15,
     semester: 'S25',
     apps: [
-      { name: 'Centible', icon: '/assets/centible.png' },
+      { name: 'Centible', icon: '/assets/apps/centible/centible.png' },
     ],
     leads: [{ name: 'Charlotte Tsui' }, { name: 'Shikha Vyas' }],
   },
@@ -172,7 +174,7 @@ export const productionTeams: ProductionTeam[] = [
     members: 18,
     semester: 'S25',
     apps: [
-      { name: 'Luminary', icon: '/assets/luminary.png' },
+      { name: 'Luminary', icon: '/assets/apps/luminary/luminary.png' },
     ],
     leads: [{ name: 'Josh Robertson' }, { name: 'Richard Lin' }],
   },
@@ -198,14 +200,14 @@ export interface LeadershipCredit {
 }
 
 export const executives: Executive[] = [
-  { title: 'Chief Executive Officer',      name: 'President',                initials: 'CE', major: 'Computer Science',    year: 'Senior' },
-  { title: 'Chief Operating Officer',      name: 'VP of Operations',         initials: 'CO', major: 'Information Science', year: 'Junior' },
-  { title: 'Chief Technology Officer',     name: 'VP of Product',            initials: 'CT', major: 'Computer Science',    year: 'Senior' },
-  { title: 'Chief Design Officer',         name: 'Design Director',          initials: 'CD', major: 'Graphic Design',      year: 'Senior' },
-  { title: 'Chief People Officer',         name: 'People Director',          initials: 'CP', major: 'Psychology',          year: 'Junior' },
-  { title: 'Chief Marketing Officer',      name: 'Marketing Director',       initials: 'CM', major: 'Business',            year: 'Junior' },
-  { title: 'Chief Learning Officer',       name: 'Learning Director',        initials: 'CL', major: 'Computer Science',    year: 'Junior' },
-  { title: 'Chief Financial Officer',      name: 'Finance Director',         initials: 'CF', major: 'Economics',           year: 'Senior' },
+  { title: 'Chief Executive Officer',      name: 'Haley Shah',    initials: 'HS' },
+  { title: 'Chief Operating Officer',      name: 'Yash Gupta',    initials: 'YG' },
+  { title: 'Chief Technology Officer',     name: 'Kavya Sriram',  initials: 'KS' },
+  { title: 'Chief Design Officer',         name: 'Trey Anderson', initials: 'TA' },
+  { title: 'Chief People Officer',         name: 'Riya J',        initials: 'RJ' },
+  { title: 'Chief Marketing Officer',      name: 'Trisha Deepak', initials: 'TD' },
+  { title: 'Chief Learning Officer',       name: 'Alex Yang',     initials: 'AY' },
+  { title: 'Chief Financial Officer',      name: 'Vasu Bansal',   initials: 'VB' },
 ]
 
 export const productionLeads: ProductionLead[] = [
@@ -478,7 +480,7 @@ export const networkDestinations: NetworkDestination[] = [
   },
   {
     company: 'Amazon',
-    logoSrc: '/assets/company-logos/Amazon Logo.webp',
+    logoSrc: '/assets/alumni/Amazon Logo.webp',
     logoAlt: 'Amazon logo',
   },
   {
@@ -557,11 +559,6 @@ export const networkDestinations: NetworkDestination[] = [
     logoAlt: 'Bank of America logo',
   },
   {
-    company: 'JPMorgan Chase',
-    logoSrc: '/assets/company-logos/JP Morgan Logo.png',
-    logoAlt: 'JPMorgan Chase logo',
-  },
-  {
     company: 'Goldman Sachs',
     logoSrc: 'https://logo.clearbit.com/goldmansachs.com?size=256',
     logoAlt: 'Goldman Sachs logo',
@@ -593,7 +590,7 @@ export const networkDestinations: NetworkDestination[] = [
   },
   {
     company: 'Salesforce',
-    logoSrc: '/assets/company-logos/Salesforce Logo.png',
+    logoSrc: '/assets/alumni/Salesforce Logo.png',
     logoAlt: 'Salesforce logo',
   },
   {
@@ -613,7 +610,7 @@ export const networkDestinations: NetworkDestination[] = [
   },
   {
     company: 'Oracle',
-    logoSrc: '/assets/company-logos/Oracle Logo.png',
+    logoSrc: '/assets/alumni/Oracle Logo.png',
     logoAlt: 'Oracle logo',
   },
   {
@@ -642,21 +639,6 @@ export const networkDestinations: NetworkDestination[] = [
     logoAlt: 'Red Hat logo',
   },
   {
-    company: 'Watershed',
-    logoSrc: 'https://www.google.com/s2/favicons?domain=watershed.com&sz=256',
-    logoAlt: 'Watershed logo',
-  },
-  {
-    company: 'GitHub',
-    logoSrc: 'https://www.google.com/s2/favicons?domain=github.com&sz=256',
-    logoAlt: 'GitHub logo',
-  },
-  {
-    company: 'Epic Games',
-    logoSrc: 'https://www.google.com/s2/favicons?domain=epicgames.com&sz=256',
-    logoAlt: 'Epic Games logo',
-  },
-  {
     company: 'Tanium',
     logoSrc: 'https://www.google.com/s2/favicons?domain=tanium.com&sz=256',
     logoAlt: 'Tanium logo',
@@ -680,7 +662,7 @@ export const networkDestinations: NetworkDestination[] = [
 
 export const pillars: Pillar[] = [
   {
-    icon: '/assets/idea.svg',
+    icon: '/assets/icons/idea.svg',
     iconAlt: 'Lightbulb Icon',
     title: 'Learn',
     eyebrow: 'Education',
@@ -689,7 +671,7 @@ export const pillars: Pillar[] = [
     text: "We teach the full iOS product process, from product thinking and interface design to implementation. The goal is to give students practical foundations, real feedback, and the repetition that helps them contribute with confidence.",
   },
   {
-    icon: '/assets/bezier.svg',
+    icon: '/assets/icons/bezier.svg',
     iconAlt: 'Bezier Icon',
     title: 'Design',
     eyebrow: 'Craft',
@@ -699,7 +681,7 @@ export const pillars: Pillar[] = [
     cardClass: 'mobile-card-margin-1',
   },
   {
-    icon: '/assets/tools.svg',
+    icon: '/assets/icons/tools.svg',
     iconAlt: 'Tools Icon',
     title: 'Develop',
     eyebrow: 'Execution',
@@ -711,44 +693,52 @@ export const pillars: Pillar[] = [
 ]
 
 export const galleryImages: GalleryImage[] = [
-  { src: '/assets/images/ios-lecture.jpg',    alt: 'iOS lecture in class' },
-  { src: '/assets/images/team-hike.jpg',      alt: 'Team hiking together' },
-  { src: '/assets/images/team-dinner.jpg',    alt: 'Team dinner out' },
-  { src: '/assets/images/academy-lecture.jpg',alt: 'Academy lecture' },
-  { src: '/assets/images/team-social.jpg',    alt: 'Team social event' },
-  { src: '/assets/images/women-in-tech.jpg',  alt: 'Women in Tech event' },
+  { src: '/assets/photos/ios-lecture.jpg',    alt: 'iOS lecture in class' },
+  { src: '/assets/photos/team-hike.jpg',      alt: 'Team hiking together' },
+  { src: '/assets/photos/team-dinner.jpg',    alt: 'Team dinner out' },
+  { src: '/assets/photos/academy-lecture.jpg',alt: 'Academy lecture' },
+  { src: '/assets/photos/team-social.jpg',    alt: 'Team social event' },
+  { src: '/assets/photos/women-in-tech.jpg',  alt: 'Women in Tech event' },
 ]
 
 export const learningTracks: Track[] = [
   {
     label: 'Learning',
-    icon: '/assets/books.svg',
+    eyebrow: 'Beginner',
+    badgeLabel: 'iOS',
+    icon: '/assets/icons/books.svg',
     iconAlt: 'Books Icon',
     title: 'iOS Bootcamp',
-    text: "Dive into the world of iOS development with a complete overview of building high-quality mobile applications using Swift, SwiftUI, and Xcode. Open to all who meet our requirements, the iOS Bootcamp offers hands-on experience in turning app ideas into reality—no interview necessary.",
+    text: "Learn to build real iOS apps from scratch. You will cover Swift fundamentals, SwiftUI layouts, working with APIs, and the full Xcode development workflow. No interview required, just a curiosity for building things and a willingness to show up.",
   },
   {
     label: 'Learning',
-    icon: '/assets/eyedropper.svg',
+    eyebrow: 'Beginner',
+    badgeLabel: 'Design',
+    icon: '/assets/icons/eyedropper.svg',
     iconAlt: 'Eyedropper Icon',
     title: 'UI/UX Bootcamp',
-    text: "Become proficient in the craft of designing amazing digital products. Open to all qualifying students, this course teaches the fundamentals of creating top-tier user interfaces and experiences, with no interview process to join.",
+    text: "Learn the craft of designing products people actually want to use. You will work in Figma, study visual hierarchy and typography, build wireframes and prototypes, and develop the eye for detail that separates good design from great. No interview required.",
     cardClass: 'mobile-card-margin-1',
   },
   {
     label: 'Learning',
-    icon: '/assets/blocks.svg',
+    eyebrow: 'Intermediate',
+    badgeLabel: 'iOS',
+    icon: '/assets/icons/blocks.svg',
     iconAlt: 'Blocks Icon',
     title: 'iOS Apprenticeship',
-    text: "Transform your fundamental iOS development knowledge into mastery with this project-focused education experience. Build real, impressive iOS apps while solidifying the basics, and learning advanced concepts.",
+    text: "Go deeper. You will tackle advanced Swift patterns, app architecture, performance, and shipping real features on a project that matters. Open to members who have completed the bootcamp or bring some prior iOS experience.",
     cardClass: 'mobile-card-margin-2',
   },
   {
     label: 'Learning',
-    icon: '/assets/blocks.svg',
+    eyebrow: 'Intermediate',
+    badgeLabel: 'Design',
+    icon: '/assets/icons/blocks.svg',
     iconAlt: 'Blocks Icon',
     title: 'UI/UX Apprenticeship',
-    text: "Transform your fundamental UI/UX design knowledge into mastery with this project-focused education experience. Design real, impressive user experiences while solidifying the basics, and learn more, including advanced research methods.",
+    text: "Take your design thinking further. You will explore user research, interaction design systems, critique, and the full process of shipping a polished product. Open to members who have completed the bootcamp or have some design background.",
     cardClass: 'mobile-card-margin-3',
   },
 ]
@@ -756,7 +746,7 @@ export const learningTracks: Track[] = [
 export const productionTracks: Track[] = [
   {
     label: 'Production',
-    icon: '/assets/client.svg',
+    icon: '/assets/icons/client.svg',
     iconAlt: 'Client Icon',
     title: 'Client Teams',
     text: "Experience the rewarding process of bringing a client's vision to life with an expert team of developers, designers, and product managers. It doesn't get any closer to real-world industry experience than this.",
@@ -764,7 +754,7 @@ export const productionTracks: Track[] = [
   },
   {
     label: 'Production',
-    icon: '/assets/rocket.svg',
+    icon: '/assets/icons/rocket.svg',
     iconAlt: 'Rocket Icon',
     title: 'Start-up Teams',
     text: "Exercise your creative freedom by working with a seamless and experienced team of developers, designers, and product managers to build apps that are completely original.",
@@ -774,18 +764,18 @@ export const productionTracks: Track[] = [
 
 export const apps: App[] = [
   {
-    coverSrc: '/assets/luminary-cover.svg',
+    coverSrc: '/assets/apps/luminary/luminary-cover.svg',
     coverAlt: 'Luminary cover',
-    iconSrc: '/assets/luminary.png',
+    iconSrc: '/assets/apps/luminary/luminary.png',
     iconAlt: 'Luminary Icon',
     name: 'Luminary',
     started: 'Started Spring 2023',
     description: "This app aims to make navigating UNC's campus more accessible for those with mobility limitations. It allows users to find accessible routes curated to their specific needs and report accessibility concerns and barriers, which are displayed in a real-time feed.",
   },
   {
-    coverSrc: '/assets/centible-cover.svg',
+    coverSrc: '/assets/apps/centible/centible-cover.svg',
     coverAlt: 'Centible cover',
-    iconSrc: '/assets/centible.png',
+    iconSrc: '/assets/apps/centible/centible.png',
     iconAlt: 'Centible Icon',
     name: 'Centible',
     started: 'Started Spring 2022',
@@ -795,9 +785,9 @@ export const apps: App[] = [
     cardClass: 'mobile-card-margin-1',
   },
   {
-    coverSrc: '/assets/bubbly-cover.svg',
+    coverSrc: '/assets/apps/bubbly/bubbly-cover.svg',
     coverAlt: 'Bubbly cover',
-    iconSrc: '/assets/bubbly-icon.svg',
+    iconSrc: '/assets/apps/bubbly/bubbly-icon.svg',
     iconAlt: 'Bubbly Icon',
     name: 'Bubbly',
     started: 'Started Fall 2021',
@@ -927,31 +917,31 @@ export const roles: Role[] = [
 export const socials: Social[] = [
   {
     href: 'https://www.linkedin.com/company/appteamcarolina/',
-    iconSrc: '/assets/icon-linkedin.svg',
+    iconSrc: '/assets/social/icon-linkedin.svg',
     alt: 'LinkedIn',
     target: '_blank',
   },
   {
     href: 'https://unc.us1.list-manage.com/subscribe?u=d0c47fe7bacc0d6c36ec8ace0&id=98e2c56752',
-    iconSrc: '/assets/icon-newsletter.svg',
+    iconSrc: '/assets/social/icon-newsletter.svg',
     alt: 'Newsletter',
     target: '_blank',
   },
   {
     href: 'https://www.instagram.com/appteamcarolina/',
-    iconSrc: '/assets/icon-instagram.svg',
+    iconSrc: '/assets/social/icon-instagram.svg',
     alt: 'Instagram',
     target: '_blank',
   },
   {
     href: 'https://twitter.com/appteamcarolina?lang=en',
-    iconSrc: '/assets/icon-twitter.svg',
+    iconSrc: '/assets/social/icon-twitter.svg',
     alt: 'Twitter',
     target: '_blank',
   },
   {
     href: 'mailto:appteamcarolina@unc.edu',
-    iconSrc: '/assets/icon-email.svg',
+    iconSrc: '/assets/social/icon-email.svg',
     alt: 'Email',
   },
 ]
