@@ -81,12 +81,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>© 2026 App Team Carolina · All rights reserved</p>
-          <div className="footer-love-note">
-            <p>Made with ♥ at UNC Chapel Hill</p>
-            <div className="footer-love-note__tooltip" role="tooltip">
-              Website designed & developed by Morgan Roberts & Will Wang.
-            </div>
-          </div>
+          <p className="footer-love-note">Made with ♥ at UNC Chapel Hill</p>
         </div>
       </div>
     </footer>
