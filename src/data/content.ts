@@ -797,8 +797,8 @@ export const apps: App[] = [
     cardClass: 'mobile-card-margin-2 third',
   },
   {
-    coverSrc: '/assets/apps/porch/porch-cover.png',
-    coverAlt: 'Porch app screens',
+    coverSrc: '/assets/apps/porch/placeholder.svg',
+    coverAlt: 'Porch designs in progress',
     iconSrc: '/assets/apps/porch/porch-icon.png',
     iconAlt: 'Porch Icon',
     name: 'Porch',
@@ -807,8 +807,8 @@ export const apps: App[] = [
     cardClass: 'mobile-card-margin-1',
   },
   {
-    coverSrc: '/assets/apps/cupboard/cupboard-icon.png',
-    coverAlt: 'Cupboard app icon',
+    coverSrc: '/assets/apps/cupboard/cupboard-cover.png',
+    coverAlt: 'Cupboard app screens',
     iconSrc: '/assets/apps/cupboard/cupboard-icon.png',
     iconAlt: 'Cupboard Icon',
     name: 'Cupboard',
