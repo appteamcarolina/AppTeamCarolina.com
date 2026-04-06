@@ -37,6 +37,14 @@ const appMeta: Record<string, { devices: string[]; availability: string[] }> = {
     devices: ['iPad'],
     availability: ['On the App Store'],
   },
+  Porch: {
+    devices: ['iPhone'],
+    availability: ['In development'],
+  },
+  Cupboard: {
+    devices: ['iPhone'],
+    availability: ['In development'],
+  },
 }
 
 function getBadgeTone(label: string) {

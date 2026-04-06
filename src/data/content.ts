@@ -143,7 +143,7 @@ export const productionTeams: ProductionTeam[] = [
     members: 17,
     semester: 'S25',
     apps: [
-      { name: 'Cupboard', icon: '/assets/icons/client.svg' },
+      { name: 'Cupboard', icon: '/assets/apps/cupboard/cupboard-icon.png' },
       { name: 'Bubbly',   icon: '/assets/apps/bubbly/bubbly-icon.svg' },
     ],
     leads: [{ name: 'Jacob Brown' }, { name: 'Kavya Sriram' }],
@@ -154,7 +154,7 @@ export const productionTeams: ProductionTeam[] = [
     members: 17,
     semester: 'F25',
     apps: [
-      { name: 'PORCH', icon: '/assets/apps/luminary/luminary.png' },
+      { name: 'Porch', icon: '/assets/apps/porch/porch-icon.png' },
     ],
     leads: [{ name: 'Anisha Kundu' }, { name: 'Ashley Hinostroza' }],
   },
@@ -795,6 +795,25 @@ export const apps: App[] = [
     link: '/bubbly',
     linkLabel: 'Tell me more!',
     cardClass: 'mobile-card-margin-2 third',
+  },
+  {
+    coverSrc: '/assets/apps/porch/porch-cover.png',
+    coverAlt: 'Porch app screens',
+    iconSrc: '/assets/apps/porch/porch-icon.png',
+    iconAlt: 'Porch Icon',
+    name: 'Porch',
+    started: 'Started Fall 2025',
+    description: "Porch connects residents with their local communities, making it easy to discover neighborhood events, share resources, and stay engaged with the people and places around them.",
+    cardClass: 'mobile-card-margin-1',
+  },
+  {
+    coverSrc: '/assets/apps/cupboard/cupboard-icon.png',
+    coverAlt: 'Cupboard app icon',
+    iconSrc: '/assets/apps/cupboard/cupboard-icon.png',
+    iconAlt: 'Cupboard Icon',
+    name: 'Cupboard',
+    started: 'Started Spring 2025',
+    description: "Cupboard connects UNC students with Carolina Cupboard's food pantry, making it easier to access nutritious food, schedule pickups, and find resources to support food security on campus.",
   },
 ]
 

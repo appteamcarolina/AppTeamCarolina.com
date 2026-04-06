@@ -27,6 +27,14 @@ const appMeta: Record<string, { summary: string; availability: string[] }> = {
     summary: 'Bubbly is an iPad experience designed to support children and adolescents with Cortical Visual Impairment through playful visual exercises.',
     availability: ['iPad', 'On the App Store'],
   },
+  Porch: {
+    summary: 'Porch connects residents with their local communities, making it easy to discover neighborhood events, share resources, and stay engaged with the people and places around them.',
+    availability: ['iPhone', 'In development'],
+  },
+  Cupboard: {
+    summary: 'Cupboard connects UNC students with Carolina Cupboard\'s food pantry, making it easier to access nutritious food, schedule pickups, and find resources to support food security on campus.',
+    availability: ['iPhone', 'In development'],
+  },
 }
 
 function getTagTone(label: string) {
