@@ -797,8 +797,8 @@ export const apps: App[] = [
     cardClass: 'mobile-card-margin-2 third',
   },
   {
-    coverSrc: '/assets/apps/porch/placeholder.svg',
-    coverAlt: 'Porch designs in progress',
+    coverSrc: '/assets/apps/porch/porch-cover.png',
+    coverAlt: 'Porch app screens',
     iconSrc: '/assets/apps/porch/porch-icon.png',
     iconAlt: 'Porch Icon',
     name: 'Porch',
