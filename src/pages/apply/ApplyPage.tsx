@@ -8,7 +8,7 @@ import Reveal from '@/components/site/Reveal'
 import PageHero from '@/components/site/PageHero'
 
 const filters = ['All', 'Learning', 'Production', 'Design', 'Developer'] as const
-const applicationsOpen = false
+const applicationsOpen = true
 
 function getRoleTags(role: (typeof roles)[number]) {
   const tags: string[] = []

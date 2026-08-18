@@ -147,7 +147,7 @@ export const PlaceCard = ({
               </a>
             ) : (
               <button type="button" className="button apply-role-card__button apply-role-card__button--disabled" disabled>
-                Applications Closed
+                Applications Open
               </button>
             )}
           </div>
