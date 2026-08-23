@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
-  Blocks,
+  //Blocks,
   BriefcaseBusiness,
   Code2,
   Layers3,
