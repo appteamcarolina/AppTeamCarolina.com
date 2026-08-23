@@ -840,7 +840,7 @@ export const roles: Role[] = [
       'Demonstrated passion for technology',
       'Desire and willingness to learn',
     ],
-    applyUrl: 'https://forms.gle/JXpm4zGs8Am9Xk6J8',
+    applyUrl: 'https://forms.gle/irW5LVMnhFpmeDL48',
     applyLabel: 'Sign Up Now',
     spacingClass: 'spacing-application-active',
     cardClass: 'second-space',
@@ -855,7 +855,7 @@ export const roles: Role[] = [
       'Passion for all things iOS',
       'Reliable access to a Mac',
     ],
-    applyUrl: 'https://forms.gle/HKjqwCJyQnvcHMNk6',
+    applyUrl: 'https://forms.gle/6GdCABHY4BMTa2NZ7',
     applyLabel: 'Apply now',
     spacingClass: 'spacing-application-other',
   },
@@ -869,7 +869,7 @@ export const roles: Role[] = [
       'Proficiency in creating wireframes, prototypes, and interactive mockups with Figma',
       'Demonstrated passion for technology',
     ],
-    applyUrl: 'https://forms.gle/cYvCfCwrhvi6sGRt5',
+    applyUrl: 'https://forms.gle/zJ4ZQQe4zhYUjoky9',
     applyLabel: 'Apply Now',
     spacingClass: 'spacing-application',
     cardClass: 'second-space',
@@ -904,8 +904,8 @@ export const roles: Role[] = [
     spacingClass: 'spacing-application',
     cardClass: 'second-space',
   },
-  {
-    title: 'Web Developer',
+  /*{
+     title: 'Web Developer',
     description: "As a Web Developer, you will create the public face for App Team through our website.",
     requirements: [
       'Experience building modern, functional websites',
@@ -915,7 +915,7 @@ export const roles: Role[] = [
     applyUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScc--LokcLakGeMV7OWd--LEk-IoeFyvNvwRLlHakIsFEknTw/viewform?usp=sharing&ouid=107410903587223080553',
     applyLabel: 'Apply Now',
     spacingClass: 'spacing-application',
-  },
+  }, */
   {
     title: 'Backend Developer',
     subtitle: 'Production Team',

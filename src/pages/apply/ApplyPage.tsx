@@ -49,14 +49,14 @@ export default function ApplyPage() {
     <Layout>
       <PageHero
         eyebrow="Apply · Seasonal Update"
-        title="Fall applications are now closed."
-        description="We are not accepting Fall applications right now, but we will be looking for thoughtful builders, designers, and collaborators again in the Spring. Feel free to read through the role descriptions to see what might be a good fit or catch your eye."
+        title="Fall applications are now open!"
+        description=" Feel free to read through the role descriptions to see what might be a good fit or catch your eye."
         background={<div className="absolute inset-0"><ApplyBackgroundPaths /></div>}
         className="apply-page-hero relative overflow-hidden"
         contentStyle={{ padding: 'calc(var(--section-v) + 56px) var(--gutter) calc(var(--section-v) - 6px)' }}
       >
         <Reveal delay={0.5} className="apply-season-note" y={18}>
-          <div className="apply-season-note__pill">Applications reopen in the Spring</div>
+          <div className="apply-season-note__pill">Apply today!</div>
         </Reveal>
       </PageHero>
 

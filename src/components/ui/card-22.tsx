@@ -50,14 +50,14 @@ const roleDecor = {
     icon: Megaphone,
     tags: ['Production', 'Some experience expected', 'Storytelling focused'],
   },
-  'Web Developer': {
+  /*'Web Developer': {
     icon: Blocks,
     tags: ['Production', 'Some experience expected', 'Builder focused'],
   },
   'Backend Developer': {
     icon: ShieldCheck,
     tags: ['Production', 'Some experience expected', 'Builder focused'],
-  },
+  }, */
 } as const
 
 function getTagTone(tag: string) {
